@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Search Results for "artificial intelligence" | Global Daily Tribune</title>
+    <meta name="description" content="Search results for artificial intelligence on Global Daily Tribune. Find relevant news articles, analysis, and reports.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://globaldailytribune.com/search/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.crossorigin" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Navigation System -->
+    <link rel="stylesheet" href="navigation-system.css">
+    
+    <style>
+        :root {
+            /* Color Palette */
+            --color-primary: #1a1a1a;
+            --color-secondary: #2d2d2d;
+            --color-accent: #c41e3a;
+            --color-accent-light: #e63946;
+            --color-text: #1a1a1a;
+            --color-text-secondary: #4a4a4a;
+            --color-text-tertiary: #6a6a6a;
+            --color-border: #e0e0e0;
+            --color-bg: #ffffff;
+            --color-bg-secondary: #f8f8f8;
+            --color-bg-tertiary: #f0f0f0;
+            
+            /* Typography */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'IBM Plex Serif', serif;
+            --font-ui: 'DM Sans', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            
+            /* Layout */
+            --max-width: 1400px;
+            --border-radius: 2px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+        
+        p {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-secondary);
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        /* Top Header */
+        .top-header {
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--spacing-sm) 0;
+            background: var(--color-bg);
+        }
+        
+        .top-header-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .date-weather {
+            display: flex;
+            gap: var(--spacing-lg);
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            color: var(--color-text-tertiary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+        
+        .social-links a {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--color-border);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Main Header */
+        .main-header {
+            padding: var(--spacing-lg) 0;
+            background: var(--color-bg);
+            border-bottom: 3px solid var(--color-primary);
+        }
+        
+        .main-header-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+        
+        .logo-subtitle {
+            font-family: var(--font-ui);
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-tertiary);
+            margin-top: 0.25rem;
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-box input {
+            padding: 0.75rem 3rem 0.75rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            width: 250px;
+            transition: var(--transition);
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .subscribe-btn {
+            background: var(--color-accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: var(--font-ui);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .subscribe-btn:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
+        }
+        
+        /* Search Header */
+        .search-header {
+            background: var(--color-bg-secondary);
+            padding: var(--spacing-xl) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .search-header-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .search-query-display {
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            color: var(--color-text-tertiary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .search-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .search-query {
+            color: var(--color-accent);
+        }
+        
+        .search-stats {
+            font-family: var(--font-ui);
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        /* Large Search Box */
+        .large-search-box {
+            position: relative;
+            max-width: 700px;
+        }
+        
+        .large-search-box input {
+            width: 100%;
+            padding: 1rem 4rem 1rem 1.5rem;
+            border: 2px solid var(--color-border);
+            border-radius: var(--border-radius);
+            font-family: var(--font-ui);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        
+        .large-search-box input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+        }
+        
+        .large-search-btn {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--color-accent);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .large-search-btn:hover {
+            background: var(--color-accent-light);
+        }
+        
+        /* Main Content */
+        .search-content {
+            max-width: var(--max-width);
+            margin: var(--spacing-xl) auto;
+            padding: 0 var(--spacing-md);
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: var(--spacing-xl);
+        }
+        
+        /* Sidebar Filters */
+        .search-sidebar {
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+        
+        .filter-section {
+            background: var(--color-bg-secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .filter-title {
+            font-family: var(--font-ui);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--color-accent);
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .filter-option:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        
+        .filter-option input[type="checkbox"] {
+            cursor: pointer;
+        }
+        
+        .filter-option label {
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            cursor: pointer;
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .filter-count {
+            color: var(--color-text-tertiary);
+            font-size: 0.85rem;
+        }
+        
+        .date-filter {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .date-filter select {
+            padding: 0.75rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        
+        .clear-filters {
+            width: 100%;
+            padding: 0.75rem;
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            font-family: var(--font-ui);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: var(--spacing-md);
+        }
+        
+        .clear-filters:hover {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+        
+        /* Results Area */
+        .results-area {
+            min-height: 500px;
+        }
+        
+        .results-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md) 0;
+            border-bottom: 2px solid var(--color-border);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .results-count {
+            font-family: var(--font-ui);
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .sort-options {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .sort-label {
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .sort-select {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            cursor: pointer;
+            background: white;
+        }
+        
+        /* Search Results */
+        .search-results {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xl);
+        }
+        
+        .result-item {
+            padding-bottom: var(--spacing-xl);
+            border-bottom: 1px solid var(--color-border);
+            transition: var(--transition);
+        }
+        
+        .result-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .result-category {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            padding: 0.35rem 0.75rem;
+            border-radius: var(--border-radius);
+            font-family: var(--font-ui);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .result-title {
+            font-size: 1.75rem;
+            margin-bottom: var(--spacing-sm);
+            cursor: pointer;
+        }
+        
+        .result-title:hover {
+            color: var(--color-accent);
+        }
+        
+        .result-excerpt {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .result-excerpt mark {
+            background: rgba(196, 30, 58, 0.15);
+            color: var(--color-text);
+            padding: 0.1rem 0.2rem;
+            font-weight: 600;
+        }
+        
+        .result-meta {
+            display: flex;
+            gap: var(--spacing-lg);
+            align-items: center;
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            color: var(--color-text-tertiary);
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: var(--spacing-2xl) 0;
+        }
+        
+        .no-results-icon {
+            font-size: 5rem;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .no-results h3 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .no-results p {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .suggestions {
+            background: var(--color-bg-secondary);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .suggestions h4 {
+            font-family: var(--font-ui);
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .suggestions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .suggestions li {
+            padding: 0.5rem 0;
+            font-family: var(--font-ui);
+        }
+        
+        .suggestions li::before {
+            content: '•';
+            color: var(--color-accent);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-2xl) 0;
+            font-family: var(--font-ui);
+        }
+        
+        .pagination button,
+        .pagination a {
+            padding: 0.75rem 1.25rem;
+            border: 1px solid var(--color-border);
+            background: white;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            font-family: var(--font-ui);
+        }
+        
+        .pagination button:hover,
+        .pagination a:hover,
+        .pagination .active {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+        
+        .pagination .disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--color-primary);
+            color: white;
+            padding: var(--spacing-2xl) 0 var(--spacing-lg);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .footer-about h3 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-about p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+        }
+        
+        .footer-column h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: var(--font-ui);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            font-family: var(--font-ui);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--spacing-lg) var(--spacing-md) 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .footer-legal {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+        
+        .footer-legal a {
+            color: rgba(255,255,255,0.6);
+            transition: var(--transition);
+        }
+        
+        .footer-legal a:hover {
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .search-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-sidebar {
+                position: static;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: var(--spacing-md);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-header-content {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+            
+            .main-header-content {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+            
+            .header-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .results-toolbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-md);
+            }
+            
+            .search-sidebar {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: var(--spacing-md);
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="date-weather">
+                <span>📅 Monday, February 2, 2026</span>
+                <span>🌤️ New York: 45°F</span>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/></svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3Z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Header -->
+    <div class="main-header">
+        <div class="main-header-content">
+            <a href="index.html" class="logo">
+                Global Daily Tribune
+                <div class="logo-subtitle">Truth & Transparency Since 1985</div>
+            </a>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="search" placeholder="Search news..." aria-label="Search" value="artificial intelligence">
+                    <button class="search-btn" aria-label="Search">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg>
+                    </button>
+                </div>
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-content">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Politics</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">World</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Culture</a></li>
+                <li><a href="#">Opinion</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Search Header -->
+    <section class="search-header">
+        <div class="search-header-content">
+            <div class="search-query-display">Search Results</div>
+            <h1 class="search-title">Results for "<span class="search-query">artificial intelligence</span>"</h1>
+            <p class="search-stats">Found <strong>247 results</strong> in 0.08 seconds</p>
+            
+            <div class="large-search-box">
+                <input type="search" placeholder="Refine your search..." value="artificial intelligence">
+                <button class="large-search-btn">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="search-content">
+        <!-- Sidebar Filters -->
+        <aside class="search-sidebar">
+            <!-- Category Filter -->
+            <div class="filter-section">
+                <h3 class="filter-title">Category</h3>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="cat-tech" checked>
+                        <label for="cat-tech">
+                            <span>Technology</span>
+                            <span class="filter-count">156</span>
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="cat-business">
+                        <label for="cat-business">
+                            <span>Business</span>
+                            <span class="filter-count">48</span>
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="cat-science">
+                        <label for="cat-science">
+                            <span>Science</span>
+                            <span class="filter-count">32</span>
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="cat-politics">
+                        <label for="cat-politics">
+                            <span>Politics</span>
+                            <span class="filter-count">11</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Date Filter -->
+            <div class="filter-section">
+                <h3 class="filter-title">Date Range</h3>
+                <div class="date-filter">
+                    <select>
+                        <option value="all">All Time</option>
+                        <option value="today">Today</option>
+                        <option value="week" selected>Past Week</option>
+                        <option value="month">Past Month</option>
+                        <option value="year">Past Year</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Content Type Filter -->
+            <div class="filter-section">
+                <h3 class="filter-title">Content Type</h3>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-article" checked>
+                        <label for="type-article">
+                            <span>Articles</span>
+                            <span class="filter-count">198</span>
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-opinion">
+                        <label for="type-opinion">
+                            <span>Opinion</span>
+                            <span class="filter-count">28</span>
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-video">
+                        <label for="type-video">
+                            <span>Video</span>
+                            <span class="filter-count">15</span>
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-analysis">
+                        <label for="type-analysis">
+                            <span>Analysis</span>
+                            <span class="filter-count">6</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="clear-filters">Clear All Filters</button>
+        </aside>
+
+        <!-- Results Area -->
+        <main class="results-area">
+            <!-- Toolbar -->
+            <div class="results-toolbar">
+                <div class="results-count">
+                    Showing <strong>1-10</strong> of <strong>247</strong> results
+                </div>
+                <div class="sort-options">
+                    <span class="sort-label">Sort by:</span>
+                    <select class="sort-select">
+                        <option value="relevance">Most Relevant</option>
+                        <option value="date">Most Recent</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Search Results -->
+            <div class="search-results">
+                <article class="result-item">
+                    <span class="result-category">Technology</span>
+                    <h2 class="result-title">Revolutionary AI Model Achieves Human-Level Reasoning in Complex Problem Solving</h2>
+                    <p class="result-excerpt">
+                        Researchers unveil breakthrough <mark>artificial intelligence</mark> system capable of logical reasoning, abstract thinking, and creative problem-solving previously thought impossible for machines. The new model demonstrates...
+                    </p>
+                    <div class="result-meta">
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3z"/></svg>
+                            <span>Dr. James Chen</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <span>2 hours ago</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>12 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="result-item">
+                    <span class="result-category">Technology</span>
+                    <h2 class="result-title">Tech Leaders Propose New Framework for Ethical AI Development and Deployment</h2>
+                    <p class="result-excerpt">
+                        Industry coalition releases comprehensive guidelines addressing bias, transparency, and accountability in <mark>artificial intelligence</mark> systems, aiming to establish global standards for responsible AI development and...
+                    </p>
+                    <div class="result-meta">
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3z"/></svg>
+                            <span>Dr. Lisa Chang</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <span>1 day ago</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>15 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="result-item">
+                    <span class="result-category">Business</span>
+                    <h2 class="result-title">Major Investment Firms Pour $10 Billion into AI Research and Development</h2>
+                    <p class="result-excerpt">
+                        Leading venture capital firms announce unprecedented funding for <mark>artificial intelligence</mark> startups, signaling strong confidence in AI's transformative potential across industries from healthcare to finance...
+                    </p>
+                    <div class="result-meta">
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3z"/></svg>
+                            <span>Alexandra Kim</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <span>2 days ago</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>8 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="result-item">
+                    <span class="result-category">Technology</span>
+                    <h2 class="result-title">How AI is Transforming Healthcare: From Diagnosis to Drug Discovery</h2>
+                    <p class="result-excerpt">
+                        Medical researchers demonstrate how <mark>artificial intelligence</mark> algorithms are revolutionizing patient care, enabling earlier disease detection and accelerating the development of life-saving medications through...
+                    </p>
+                    <div class="result-meta">
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3z"/></svg>
+                            <span>Dr. Michael Zhang</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <span>3 days ago</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="result-item">
+                    <span class="result-category">Science</span>
+                    <h2 class="result-title">AI Systems Learn to Predict Climate Patterns with Unprecedented Accuracy</h2>
+                    <p class="result-excerpt">
+                        Climate scientists leverage advanced <mark>artificial intelligence</mark> models to forecast weather patterns and climate change impacts with remarkable precision, potentially saving billions in disaster preparedness...
+                    </p>
+                    <div class="result-meta">
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3z"/></svg>
+                            <span>Dr. Emily Roberts</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <span>4 days ago</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>14 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="result-item">
+                    <span class="result-category">Technology</span>
+                    <h2 class="result-title">The Future of Work: How AI is Reshaping Employment Across Industries</h2>
+                    <p class="result-excerpt">
+                        Economic analysts examine the profound impact of <mark>artificial intelligence</mark> on the global workforce, exploring both job displacement concerns and emerging opportunities in an AI-driven economy...
+                    </p>
+                    <div class="result-meta">
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3z"/></svg>
+                            <span>Marcus Johnson</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <span>5 days ago</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>20 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="result-item">
+                    <span class="result-category">Politics</span>
+                    <h2 class="result-title">Lawmakers Debate New Regulations for Artificial Intelligence Technologies</h2>
+                    <p class="result-excerpt">
+                        Congressional committees hold hearings on proposed legislation to govern <mark>artificial intelligence</mark> development and deployment, balancing innovation with public safety and ethical considerations...
+                    </p>
+                    <div class="result-meta">
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3z"/></svg>
+                            <span>Jennifer Williams</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <span>6 days ago</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>11 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <nav class="pagination" aria-label="Pagination">
+                <button class="disabled" disabled>← Previous</button>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <span>...</span>
+                <a href="#">25</a>
+                <button>Next →</button>
+            </nav>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Global Daily Tribune</h3>
+                <p>Delivering truth and transparency since 1985. The Global Daily Tribune is committed to providing accurate, unbiased news coverage and in-depth analysis on the issues that matter most to our readers worldwide.</p>
+                <div class="social-links" style="margin-top: 1.5rem;">
+                    <a href="#" aria-label="Facebook">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3Z"/></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Politics</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">World News</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Culture</a></li>
+                    <li><a href="#">Opinion</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Archives</a></li>
+                    <li><a href="#">RSS Feeds</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Corrections</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Global Daily Tribune. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Navigation System JS -->
+    <script src="navigation-system.js"></script>
+    
+    <script>
+        // Filter functionality
+        const filterCheckboxes = document.querySelectorAll('.filter-option input[type="checkbox"]');
+        const clearFiltersBtn = document.querySelector('.clear-filters');
+        
+        filterCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                console.log('Filter changed:', this.id, this.checked);
+                // In real application, this would trigger AJAX call to filter results
+                updateResultsCount();
+            });
+        });
+        
+        clearFiltersBtn.addEventListener('click', function() {
+            filterCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            console.log('All filters cleared');
+            updateResultsCount();
+        });
+        
+        // Sort functionality
+        const sortSelect = document.querySelector('.sort-select');
+        sortSelect.addEventListener('change', function() {
+            console.log('Sorting by:', this.value);
+            // In real application, this would trigger AJAX call to re-sort results
+        });
+        
+        // Date filter
+        const dateFilter = document.querySelector('.date-filter select');
+        dateFilter.addEventListener('change', function() {
+            console.log('Date filter:', this.value);
+            // In real application, this would trigger AJAX call to filter by date
+        });
+        
+        // Update results count based on active filters
+        function updateResultsCount() {
+            const activeFilters = Array.from(filterCheckboxes).filter(cb => cb.checked);
+            console.log('Active filters:', activeFilters.length);
+            // In real application, update the results count display
+        }
+        
+        // Image lazy loading
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.5s ease';
+            
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            
+            if (img.complete) {
+                img.style.opacity = '1';
+            }
+        });
+    </script>
+</body>
+</html>
