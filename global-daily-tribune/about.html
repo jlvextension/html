@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>About Us - Our Mission, Values & Team | Global Daily Tribune</title>
+    <meta name="description" content="Learn about Global Daily Tribune's mission to deliver truth and transparency. Meet our award-winning team of journalists committed to unbiased, in-depth news coverage since 1985.">
+    <meta name="keywords" content="about global daily tribune, news organization, journalism mission, editorial team, news values">
+    <meta name="author" content="Global Daily Tribune">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://globaldailytribune.com/about/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://globaldailytribune.com/about/">
+    <meta property="og:title" content="About Us - Global Daily Tribune">
+    <meta property="og:description" content="Learn about our mission to deliver truth and transparency. Meet our award-winning journalism team.">
+    <meta property="og:image" content="https://globaldailytribune.com/about-og.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://globaldailytribune.com/about/">
+    <meta property="twitter:title" content="About Us - Global Daily Tribune">
+    <meta property="twitter:description" content="Learn about our mission to deliver truth and transparency.">
+    <meta property="twitter:image" content="https://globaldailytribune.com/about-twitter.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.crossorigin" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsMediaOrganization",
+      "name": "Global Daily Tribune",
+      "url": "https://globaldailytribune.com",
+      "logo": "https://globaldailytribune.com/logo.png",
+      "foundingDate": "1985",
+      "description": "Independent news organization committed to delivering truth and transparency through unbiased journalism.",
+      "sameAs": [
+        "https://twitter.com/globaldaily",
+        "https://facebook.com/globaldaily",
+        "https://linkedin.com/company/globaldaily"
+      ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            /* Color Palette */
+            --color-primary: #1a1a1a;
+            --color-secondary: #2d2d2d;
+            --color-accent: #c41e3a;
+            --color-accent-light: #e63946;
+            --color-text: #1a1a1a;
+            --color-text-secondary: #4a4a4a;
+            --color-text-tertiary: #6a6a6a;
+            --color-border: #e0e0e0;
+            --color-bg: #ffffff;
+            --color-bg-secondary: #f8f8f8;
+            --color-bg-tertiary: #f0f0f0;
+            
+            /* Typography */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'IBM Plex Serif', serif;
+            --font-ui: 'DM Sans', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            
+            /* Layout */
+            --max-width: 1400px;
+            --content-width: 900px;
+            --border-radius: 2px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        /* Top Header */
+        .top-header {
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--spacing-sm) 0;
+            background: var(--color-bg);
+        }
+        
+        .top-header-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .date-weather {
+            display: flex;
+            gap: var(--spacing-lg);
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            color: var(--color-text-tertiary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+        
+        .social-links a {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--color-border);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Main Header */
+        .main-header {
+            padding: var(--spacing-lg) 0;
+            background: var(--color-bg);
+            border-bottom: 3px solid var(--color-primary);
+        }
+        
+        .main-header-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+        
+        .logo-subtitle {
+            font-family: var(--font-ui);
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-tertiary);
+            margin-top: 0.25rem;
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-box input {
+            padding: 0.75rem 3rem 0.75rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            width: 250px;
+            transition: var(--transition);
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .subscribe-btn {
+            background: var(--color-accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: var(--font-ui);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .subscribe-btn:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
+        }
+        
+        /* Navigation */
+        .navigation {
+            background: var(--color-primary);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-md);
+        }
+        
+        .nav-menu li a {
+            display: block;
+            padding: var(--spacing-sm) var(--spacing-md);
+            color: white;
+            font-family: var(--font-ui);
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+        
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu li a:hover::after,
+        .nav-menu li a.active::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><text x="10" y="50" font-size="40" fill="rgba(255,255,255,0.03)" font-family="serif">"</text></svg>');
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-title {
+            color: white;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-family: var(--font-ui);
+            font-weight: 400;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            max-width: var(--content-width);
+            margin: var(--spacing-2xl) auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+        }
+        
+        /* Values Grid */
+        .values-section {
+            background: var(--color-bg-secondary);
+            padding: var(--spacing-2xl) 0;
+        }
+        
+        .values-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .value-card {
+            background: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--color-accent);
+            transition: var(--transition);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .value-card p {
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: var(--color-primary);
+            color: white;
+            padding: var(--spacing-2xl) 0;
+        }
+        
+        .stats-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-xl);
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: var(--spacing-lg);
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--color-accent-light);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .stat-label {
+            font-family: var(--font-ui);
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Team Section */
+        .team-section {
+            max-width: var(--max-width);
+            margin: var(--spacing-2xl) auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .team-card {
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto var(--spacing-md);
+            border: 5px solid var(--color-bg-tertiary);
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .team-card:hover .team-avatar {
+            border-color: var(--color-accent);
+        }
+        
+        .team-name {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .team-role {
+            font-family: var(--font-ui);
+            font-size: 1rem;
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .team-bio {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .team-social a {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--color-border);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .team-social a:hover {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+        
+        /* Timeline Section */
+        .timeline-section {
+            background: var(--color-bg-secondary);
+            padding: var(--spacing-2xl) 0;
+        }
+        
+        .timeline-content {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: var(--spacing-xl);
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--color-accent);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--spacing-xl);
+            padding-left: var(--spacing-lg);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -42px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            border: 4px solid var(--color-bg-secondary);
+        }
+        
+        .timeline-year {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .timeline-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .timeline-description {
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        /* Awards Section */
+        .awards-section {
+            max-width: var(--max-width);
+            margin: var(--spacing-2xl) auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .award-card {
+            background: var(--color-bg-secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .award-card:hover {
+            background: var(--color-bg-tertiary);
+            transform: scale(1.05);
+        }
+        
+        .award-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .award-name {
+            font-family: var(--font-ui);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .award-year {
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            color: var(--color-text-tertiary);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+            color: white;
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .cta-title {
+            color: white;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .cta-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            padding: 1rem 2.5rem;
+            border: 2px solid white;
+            border-radius: var(--border-radius);
+            font-family: var(--font-ui);
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-btn-primary {
+            background: white;
+            color: var(--color-accent);
+        }
+        
+        .cta-btn-primary:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .cta-btn-secondary {
+            background: transparent;
+            color: white;
+        }
+        
+        .cta-btn-secondary:hover {
+            background: white;
+            color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--color-primary);
+            color: white;
+            padding: var(--spacing-2xl) 0 var(--spacing-lg);
+        }
+        
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .footer-about h3 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-about p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+        }
+        
+        .footer-column h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: var(--font-ui);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            font-family: var(--font-ui);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--spacing-lg) var(--spacing-md) 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .footer-legal {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+        
+        .footer-legal a {
+            color: rgba(255,255,255,0.6);
+            transition: var(--transition);
+        }
+        
+        .footer-legal a:hover {
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-header-content {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+            
+            .main-header-content {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .values-grid,
+            .team-grid,
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .cta-btn {
+                width: 100%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: var(--spacing-md);
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="date-weather">
+                <span>📅 Monday, February 2, 2026</span>
+                <span>🌤️ New York: 45°F</span>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/></svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3Z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Header -->
+    <div class="main-header">
+        <div class="main-header-content">
+            <a href="index.html" class="logo">
+                Global Daily Tribune
+                <div class="logo-subtitle">Truth & Transparency Since 1985</div>
+            </a>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="search" placeholder="Search news..." aria-label="Search">
+                    <button class="search-btn" aria-label="Search">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg>
+                    </button>
+                </div>
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-content">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Politics</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">World</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Culture</a></li>
+                <li><a href="#">Opinion</a></li>
+                <li><a href="#" class="active">More</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">About Us</h1>
+            <p class="hero-subtitle">Truth & Transparency Since 1985</p>
+            <p class="hero-description">
+                We are an independent news organization committed to delivering unbiased, in-depth journalism that empowers our readers to make informed decisions about the world around them.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="section-header">
+            <h2 class="section-title">Our Mission</h2>
+        </div>
+        <p>
+            At Global Daily Tribune, we believe that quality journalism is essential to a functioning democracy. Our mission is to provide accurate, unbiased news coverage and thoughtful analysis that helps our readers understand the complex world we live in.
+        </p>
+        <p>
+            Since our founding in 1985, we have maintained our independence and commitment to journalistic integrity. We refuse to be swayed by political pressure or corporate interests. Our loyalty is to our readers and to the truth.
+        </p>
+        <p>
+            We cover the stories that matter—from local communities to global events—with fairness, depth, and context. Our award-winning team of journalists works tirelessly to bring you the news you need to know, when you need to know it.
+        </p>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="values-content">
+            <div class="section-header">
+                <h2 class="section-title">Our Core Values</h2>
+                <p class="section-subtitle">The principles that guide everything we do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Accuracy</h3>
+                    <p>We verify every fact and cite our sources. When we make mistakes, we correct them promptly and transparently.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⚖️</div>
+                    <h3>Impartiality</h3>
+                    <p>We present all sides of a story fairly and let our readers draw their own conclusions based on the facts.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔍</div>
+                    <h3>Transparency</h3>
+                    <p>We are open about our methods, sources, and funding. Our readers deserve to know how we operate.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🛡️</div>
+                    <h3>Independence</h3>
+                    <p>We maintain editorial independence from political and commercial interests to serve only our readers.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Context</h3>
+                    <p>We don't just report what happened—we explain why it matters and what it means for our readers.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Accountability</h3>
+                    <p>We hold the powerful accountable while treating everyone with dignity and respect.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">41</div>
+                <div class="stat-label">Years of Excellence</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Award-Winning Journalists</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10M+</div>
+                <div class="stat-label">Monthly Readers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Countries Covered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">News Coverage</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="section-header">
+            <h2 class="section-title">Our Leadership Team</h2>
+            <p class="section-subtitle">Meet the people steering our mission</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="https://i.pravatar.cc/300?img=12" alt="Margaret Thompson" class="team-avatar">
+                <h3 class="team-name">Margaret Thompson</h3>
+                <p class="team-role">Editor-in-Chief</p>
+                <p class="team-bio">Pulitzer Prize winner with 30 years of experience in investigative journalism. Former foreign correspondent covering major global events.</p>
+                <div class="team-social">
+                    <a href="#" aria-label="Twitter"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg></a>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <img src="https://i.pravatar.cc/300?img=33" alt="David Richardson" class="team-avatar">
+                <h3 class="team-name">David Richardson</h3>
+                <p class="team-role">Managing Editor</p>
+                <p class="team-bio">Award-winning editor specializing in political and economic coverage. Led major investigative projects exposing corporate fraud.</p>
+                <div class="team-social">
+                    <a href="#" aria-label="Twitter"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg></a>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <img src="https://i.pravatar.cc/300?img=27" alt="Sarah Martinez" class="team-avatar">
+                <h3 class="team-name">Sarah Martinez</h3>
+                <p class="team-role">Digital Director</p>
+                <p class="team-bio">Pioneer in digital journalism with expertise in multimedia storytelling and audience engagement strategies.</p>
+                <div class="team-social">
+                    <a href="#" aria-label="Twitter"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg></a>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <img src="https://i.pravatar.cc/300?img=58" alt="Michael Chen" class="team-avatar">
+                <h3 class="team-name">Michael Chen</h3>
+                <p class="team-role">Chief Technology Officer</p>
+                <p class="team-bio">Technology visionary leading our digital transformation and innovation initiatives with cutting-edge solutions.</p>
+                <div class="team-social">
+                    <a href="#" aria-label="Twitter"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="timeline-content">
+            <div class="section-header">
+                <h2 class="section-title">Our Journey</h2>
+                <p class="section-subtitle">Key milestones in our history</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1985</div>
+                    <h3 class="timeline-title">Foundation</h3>
+                    <p class="timeline-description">Global Daily Tribune was founded by a group of veteran journalists committed to independent, quality reporting.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1992</div>
+                    <h3 class="timeline-title">First Major Award</h3>
+                    <p class="timeline-description">Won our first Pulitzer Prize for investigative reporting on government corruption.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2003</div>
+                    <h3 class="timeline-title">Digital Expansion</h3>
+                    <p class="timeline-description">Launched our digital platform, reaching millions of readers worldwide online.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <h3 class="timeline-title">Global Network</h3>
+                    <p class="timeline-description">Established bureaus in 25 countries, becoming truly global in our coverage.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <h3 class="timeline-title">Innovation Lab</h3>
+                    <p class="timeline-description">Launched our Innovation Lab to explore new forms of storytelling and audience engagement.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2026</div>
+                    <h3 class="timeline-title">Today</h3>
+                    <p class="timeline-description">Continuing our mission with 10 million monthly readers and a commitment to excellence in journalism.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards-section">
+        <div class="section-header">
+            <h2 class="section-title">Recognition & Awards</h2>
+            <p class="section-subtitle">Honoring our commitment to excellence</p>
+        </div>
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-icon">🏆</div>
+                <div class="award-name">Pulitzer Prize</div>
+                <div class="award-year">2024</div>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🏆</div>
+                <div class="award-name">Peabody Award</div>
+                <div class="award-year">2023</div>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🏆</div>
+                <div class="award-name">Edward R. Murrow Award</div>
+                <div class="award-year">2023</div>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🏆</div>
+                <div class="award-name">National Press Club Award</div>
+                <div class="award-year">2022</div>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🏆</div>
+                <div class="award-name">George Polk Award</div>
+                <div class="award-year">2021</div>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🏆</div>
+                <div class="award-name">Investigative Reporters Award</div>
+                <div class="award-year">2021</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Join Our Mission</h2>
+            <p class="cta-description">
+                Support independent journalism. Subscribe today and help us continue delivering the quality news coverage you deserve.
+            </p>
+            <div class="cta-buttons">
+                <button class="cta-btn cta-btn-primary">Subscribe Now</button>
+                <button class="cta-btn cta-btn-secondary">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Global Daily Tribune</h3>
+                <p>Delivering truth and transparency since 1985. The Global Daily Tribune is committed to providing accurate, unbiased news coverage and in-depth analysis on the issues that matter most to our readers worldwide.</p>
+                <div class="social-links" style="margin-top: 1.5rem;">
+                    <a href="#" aria-label="Facebook">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3Z"/></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Politics</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">World News</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Culture</a></li>
+                    <li><a href="#">Opinion</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Archives</a></li>
+                    <li><a href="#">RSS Feeds</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Corrections</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Global Daily Tribune. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // CTA buttons functionality
+        const ctaButtons = document.querySelectorAll('.cta-btn');
+        ctaButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.classList.contains('cta-btn-primary')) {
+                    console.log('Redirecting to subscription page...');
+                    // window.location.href = '/subscribe';
+                } else {
+                    console.log('Opening contact form...');
+                    // window.location.href = '/contact';
+                }
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Image lazy loading
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.5s ease';
+            
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            
+            if (img.complete) {
+                img.style.opacity = '1';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe value cards, team cards, and timeline items
+        document.querySelectorAll('.value-card, .team-card, .timeline-item, .award-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
