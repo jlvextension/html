@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Global Daily Tribune</title>
+    <meta name="description" content="The page you're looking for cannot be found. Browse our latest news or search our archives.">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-primary: #1a1a1a;
+            --color-secondary: #2d2d2d;
+            --color-accent: #c41e3a;
+            --color-accent-light: #e63946;
+            --color-text: #1a1a1a;
+            --color-text-secondary: #4a4a4a;
+            --color-text-tertiary: #6a6a6a;
+            --color-border: #e0e0e0;
+            --color-bg: #ffffff;
+            --color-bg-secondary: #f8f8f8;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'IBM Plex Serif', serif;
+            --font-ui: 'DM Sans', sans-serif;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 900;
+            line-height: 1.2;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        /* Header */
+        .header {
+            padding: var(--spacing-lg) 0;
+            border-bottom: 3px solid var(--color-primary);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+        
+        .logo-subtitle {
+            font-family: var(--font-ui);
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-tertiary);
+            margin-top: 0.25rem;
+        }
+        
+        .home-btn {
+            background: var(--color-accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 2px;
+            font-family: var(--font-ui);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .home-btn:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
+        }
+        
+        /* Error Section */
+        .error-container {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-2xl) var(--spacing-md);
+        }
+        
+        .error-content {
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .error-illustration {
+            margin-bottom: var(--spacing-xl);
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .error-number {
+            font-family: var(--font-display);
+            font-size: clamp(8rem, 20vw, 15rem);
+            font-weight: 900;
+            color: var(--color-accent);
+            line-height: 1;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .error-number::before {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: var(--color-border);
+            z-index: -1;
+            transform: translate(8px, 8px);
+        }
+        
+        .newspaper-icon {
+            font-size: 5rem;
+            margin-bottom: var(--spacing-md);
+            animation: rotate 2s ease-in-out infinite;
+        }
+        
+        @keyframes rotate {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+        
+        .error-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: var(--spacing-md);
+            color: var(--color-primary);
+        }
+        
+        .error-message {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.6;
+        }
+        
+        /* Search Box */
+        .error-search {
+            max-width: 600px;
+            margin: 0 auto var(--spacing-xl);
+            position: relative;
+        }
+        
+        .error-search input {
+            width: 100%;
+            padding: 1rem 4rem 1rem 1.5rem;
+            border: 2px solid var(--color-border);
+            border-radius: 2px;
+            font-family: var(--font-ui);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .error-search input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+        }
+        
+        .error-search button {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--color-accent);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: var(--font-ui);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .error-search button:hover {
+            background: var(--color-accent-light);
+        }
+        
+        /* Quick Links */
+        .quick-links {
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .quick-links h3 {
+            font-family: var(--font-ui);
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .link-card {
+            background: var(--color-bg-secondary);
+            padding: var(--spacing-lg);
+            border-radius: 2px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        
+        .link-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .link-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .link-description {
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+        
+        /* Popular Articles */
+        .popular-section {
+            background: var(--color-bg-secondary);
+            padding: var(--spacing-2xl) var(--spacing-md);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .popular-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .popular-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .popular-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .popular-card {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .popular-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .popular-category {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            padding: 0.35rem 0.75rem;
+            border-radius: 2px;
+            font-family: var(--font-ui);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .popular-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.4;
+        }
+        
+        .popular-meta {
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            color: var(--color-text-tertiary);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--color-primary);
+            color: white;
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-copyright {
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+            
+            .error-number {
+                font-size: 8rem;
+            }
+            
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .popular-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                Global Daily Tribune
+                <div class="logo-subtitle">Truth & Transparency Since 1985</div>
+            </a>
+            <a href="index.html">
+                <button class="home-btn">Back to Home</button>
+            </a>
+        </div>
+    </header>
+
+    <!-- Error Container -->
+    <main class="error-container">
+        <div class="error-content">
+            <div class="error-illustration">
+                <div class="newspaper-icon">📰</div>
+                <div class="error-number">404</div>
+            </div>
+            
+            <h1 class="error-title">Oops! This Story Wasn't Published</h1>
+            <p class="error-message">
+                The page you're looking for seems to have been moved, deleted, or never existed. 
+                But don't worry — we have plenty of other stories for you to explore!
+            </p>
+            
+            <!-- Search Box -->
+            <div class="error-search">
+                <input type="search" placeholder="Search for news, topics, or articles..." aria-label="Search">
+                <button aria-label="Search">Search</button>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <h3>Try These Instead</h3>
+                <div class="links-grid">
+                    <a href="index.html" class="link-card">
+                        <div class="link-icon">🏠</div>
+                        <div class="link-title">Homepage</div>
+                        <div class="link-description">Latest breaking news</div>
+                    </a>
+                    
+                    <a href="category-page.html" class="link-card">
+                        <div class="link-icon">💻</div>
+                        <div class="link-title">Technology</div>
+                        <div class="link-description">Tech news & innovation</div>
+                    </a>
+                    
+                    <a href="archive-page.html" class="link-card">
+                        <div class="link-icon">📚</div>
+                        <div class="link-title">Archive</div>
+                        <div class="link-description">Browse by date</div>
+                    </a>
+                    
+                    <a href="contact-page.html" class="link-card">
+                        <div class="link-icon">📧</div>
+                        <div class="link-title">Contact</div>
+                        <div class="link-description">Get in touch</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Popular Articles -->
+    <section class="popular-section">
+        <div class="popular-content">
+            <h2 class="popular-title">Popular Articles Right Now</h2>
+            <div class="popular-grid">
+                <div class="popular-card">
+                    <span class="popular-category">Technology</span>
+                    <h4>Revolutionary AI Model Achieves Human-Level Reasoning</h4>
+                    <p class="popular-meta">Dr. James Chen • 2 hours ago</p>
+                </div>
+                
+                <div class="popular-card">
+                    <span class="popular-category">Business</span>
+                    <h4>Stock Markets Rally on Strong Economic Growth Indicators</h4>
+                    <p class="popular-meta">Alexandra Kim • 4 hours ago</p>
+                </div>
+                
+                <div class="popular-card">
+                    <span class="popular-category">World</span>
+                    <h4>Global Climate Summit Announces Historic Agreement</h4>
+                    <p class="popular-meta">Sarah Martinez • 6 hours ago</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="#">Politics</a>
+                <a href="#">Business</a>
+                <a href="#">Technology</a>
+                <a href="#">World</a>
+                <a href="#">Sports</a>
+                <a href="about-page.html">About</a>
+                <a href="contact-page.html">Contact</a>
+            </div>
+            <p class="footer-copyright">
+                &copy; 2026 Global Daily Tribune. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Search functionality
+        const searchInput = document.querySelector('.error-search input');
+        const searchButton = document.querySelector('.error-search button');
+        
+        searchButton.addEventListener('click', function() {
+            const query = searchInput.value.trim();
+            if (query) {
+                window.location.href = `search-results.html?q=${encodeURIComponent(query)}`;
+            }
+        });
+        
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchButton.click();
+            }
+        });
+        
+        // Popular cards click
+        const popularCards = document.querySelectorAll('.popular-card');
+        popularCards.forEach(card => {
+            card.addEventListener('click', function() {
+                window.location.href = 'article-page.html';
+            });
+        });
+        
+        // Add animation on load
+        window.addEventListener('load', function() {
+            document.querySelector('.error-illustration').style.opacity = '0';
+            document.querySelector('.error-illustration').style.transform = 'scale(0.8)';
+            
+            setTimeout(() => {
+                document.querySelector('.error-illustration').style.transition = 'all 0.6s ease';
+                document.querySelector('.error-illustration').style.opacity = '1';
+                document.querySelector('.error-illustration').style.transform = 'scale(1)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
