@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery - Watch Latest Videos | Global Daily Tribune</title>
+    <meta name="description" content="Browse our collection of news videos, documentaries, interviews and analysis.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navigation-system.css">
+    <style>
+        :root { --color-primary: #1a1a1a; --color-accent: #c41e3a; --color-text: #1a1a1a; --color-text-secondary: #4a4a4a; --color-border: #e0e0e0; --color-bg: #ffffff; --color-bg-secondary: #f8f8f8; --font-display: 'Playfair Display', serif; --font-body: 'IBM Plex Serif', serif; --font-ui: 'DM Sans', sans-serif; --max-width: 1400px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--color-text); line-height: 1.7; }
+        h1, h2, h3 { font-family: var(--font-display); font-weight: 900; }
+        a { text-decoration: none; color: inherit; }
+        
+        .top-header { border-bottom: 1px solid var(--color-border); padding: 1rem 0; }
+        .top-header-content { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .date-weather { display: flex; gap: 2rem; font-family: var(--font-ui); font-size: 0.85rem; color: #6a6a6a; }
+        .social-links { display: flex; gap: 1rem; }
+        .social-links a { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border); border-radius: 50%; }
+        .social-links a:hover { background: var(--color-primary); color: white; }
+        
+        .main-header { padding: 2rem 0; border-bottom: 3px solid var(--color-primary); }
+        .main-header-content { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-display); font-size: 2.5rem; font-weight: 900; }
+        .logo-subtitle { font-family: var(--font-ui); font-size: 0.7rem; text-transform: uppercase; color: #6a6a6a; margin-top: 0.25rem; }
+        .header-actions { display: flex; gap: 1.5rem; align-items: center; }
+        .search-box { position: relative; }
+        .search-box input { padding: 0.75rem 3rem 0.75rem 1rem; border: 1px solid var(--color-border); border-radius: 2px; width: 250px; }
+        .search-btn { position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; }
+        .subscribe-btn { background: var(--color-accent); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 2px; font-family: var(--font-ui); font-weight: 600; cursor: pointer; }
+        
+        .page-header { background: linear-gradient(135deg, var(--color-primary), #2d2d2d); color: white; padding: 3rem 0; text-align: center; }
+        .page-title { font-size: 3.5rem; color: white; margin-bottom: 1rem; }
+        
+        .filter-bar { background: var(--color-bg-secondary); padding: 1.5rem 0; border-bottom: 1px solid var(--color-border); }
+        .filter-content { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+        .filter-btn { padding: 0.75rem 1.5rem; background: white; border: 2px solid var(--color-border); border-radius: 2px; font-family: var(--font-ui); font-weight: 600; cursor: pointer; }
+        .filter-btn.active { background: var(--color-accent); color: white; border-color: var(--color-accent); }
+        
+        .video-content { max-width: var(--max-width); margin: 3rem auto; padding: 0 1.5rem; }
+        .featured-video { margin-bottom: 3rem; position: relative; border-radius: 2px; overflow: hidden; aspect-ratio: 16/9; background: #000; cursor: pointer; }
+        .featured-video img { width: 100%; height: 100%; object-fit: cover; }
+        .play-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
+        .play-btn { width: 80px; height: 80px; background: rgba(196,30,58,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; }
+        .video-overlay-info { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 2rem; color: white; }
+        
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+        .video-card { background: white; border-radius: 2px; overflow: hidden; cursor: pointer; transition: all 0.3s; }
+        .video-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .video-thumb { position: relative; aspect-ratio: 16/9; background: #000; overflow: hidden; }
+        .video-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .duration { position: absolute; bottom: 0.5rem; right: 0.5rem; background: rgba(0,0,0,0.8); color: white; padding: 0.25rem 0.5rem; border-radius: 2px; font-size: 0.75rem; font-weight: 700; }
+        .video-info { padding: 1.5rem; }
+        .video-category { display: inline-block; background: var(--color-accent); color: white; padding: 0.25rem 0.6rem; border-radius: 2px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem; }
+        .video-title { font-size: 1.25rem; margin-bottom: 0.75rem; line-height: 1.3; }
+        .video-meta { font-family: var(--font-ui); font-size: 0.85rem; color: #6a6a6a; }
+        
+        .load-more { text-align: center; margin-top: 3rem; }
+        .load-more-btn { background: var(--color-primary); color: white; padding: 1rem 3rem; border: none; border-radius: 2px; font-family: var(--font-ui); font-weight: 700; cursor: pointer; }
+        
+        .footer { background: var(--color-primary); color: white; padding: 3rem 0 1.5rem; margin-top: 3rem; }
+        .footer-content { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 2rem; }
+        .footer-about h3 { color: white; margin-bottom: 1rem; }
+        .footer-about p { color: rgba(255,255,255,0.8); }
+        .footer-column h4 { color: white; font-size: 1.1rem; margin-bottom: 1rem; text-transform: uppercase; font-family: var(--font-ui); }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a { color: rgba(255,255,255,0.8); font-family: var(--font-ui); }
+        .footer-links a:hover { color: white; }
+        .footer-bottom { max-width: var(--max-width); margin: 0 auto; padding: 1.5rem 1.5rem 0; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; font-family: var(--font-ui); font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+        .footer-legal { display: flex; gap: 2rem; }
+        
+        @media (max-width: 768px) {
+            .top-header-content, .main-header-content { flex-direction: column; gap: 1rem; }
+            .video-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="date-weather"><span>📅 Monday, February 2, 2026</span><span>🌤️ New York: 45°F</span></div>
+            <div class="social-links">
+                <a href="#"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/></svg></a>
+                <a href="#"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-header">
+        <div class="main-header-content">
+            <a href="index.html" class="logo">Global Daily Tribune<div class="logo-subtitle">Truth & Transparency Since 1985</div></a>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="search" placeholder="Search videos...">
+                    <button class="search-btn"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg></button>
+                </div>
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navigation">
+        <div class="nav-content">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Politics</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">World</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Culture</a></li>
+                <li><a href="#" class="active">Videos</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1 class="page-title">Video Gallery</h1>
+        <p>Watch the latest news videos, documentaries, and interviews</p>
+    </div>
+
+    <div class="filter-bar">
+        <div class="filter-content">
+            <button class="filter-btn active">All Videos</button>
+            <button class="filter-btn">Breaking News</button>
+            <button class="filter-btn">Documentaries</button>
+            <button class="filter-btn">Interviews</button>
+            <button class="filter-btn">Analysis</button>
+        </div>
+    </div>
+
+    <div class="video-content">
+        <div class="featured-video">
+            <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=1200&h=675&fit=crop" alt="Featured">
+            <div class="play-overlay"><div class="play-btn">▶</div></div>
+            <div class="video-overlay-info">
+                <span class="video-category">Breaking News</span>
+                <h2>Climate Summit: Historic Agreement Reached</h2>
+                <div class="video-meta">Sarah Martinez • 25:48 • 156K views</div>
+            </div>
+        </div>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=640&h=360&fit=crop" alt="AI Documentary">
+                    <div class="play-overlay"><div class="play-btn" style="width:50px;height:50px;font-size:1.2rem">▶</div></div>
+                    <div class="duration">42:15</div>
+                </div>
+                <div class="video-info">
+                    <span class="video-category">Documentary</span>
+                    <h3 class="video-title">AI Revolution: Reshaping Our World</h3>
+                    <div class="video-meta">5 hours ago • 89K views</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=640&h=360&fit=crop" alt="Tech Interview">
+                    <div class="play-overlay"><div class="play-btn" style="width:50px;height:50px;font-size:1.2rem">▶</div></div>
+                    <div class="duration">18:32</div>
+                </div>
+                <div class="video-info">
+                    <span class="video-category">Interview</span>
+                    <h3 class="video-title">Tech CEO Discusses Innovation Future</h3>
+                    <div class="video-meta">8 hours ago • 45K views</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=640&h=360&fit=crop" alt="Markets">
+                    <div class="play-overlay"><div class="play-btn" style="width:50px;height:50px;font-size:1.2rem">▶</div></div>
+                    <div class="duration">12:45</div>
+                </div>
+                <div class="video-info">
+                    <span class="video-category">Breaking News</span>
+                    <h3 class="video-title">Markets Rally on Strong Data</h3>
+                    <div class="video-meta">1 hour ago • 124K views</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=640&h=360&fit=crop" alt="Politics">
+                    <div class="play-overlay"><div class="play-btn" style="width:50px;height:50px;font-size:1.2rem">▶</div></div>
+                    <div class="duration">15:20</div>
+                </div>
+                <div class="video-info">
+                    <span class="video-category">Analysis</span>
+                    <h3 class="video-title">Global Political Landscape 2026</h3>
+                    <div class="video-meta">12 hours ago • 67K views</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=640&h=360&fit=crop" alt="Climate">
+                    <div class="play-overlay"><div class="play-btn" style="width:50px;height:50px;font-size:1.2rem">▶</div></div>
+                    <div class="duration">38:45</div>
+                </div>
+                <div class="video-info">
+                    <span class="video-category">Documentary</span>
+                    <h3 class="video-title">Our Planet's Future</h3>
+                    <div class="video-meta">1 day ago • 203K views</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumb">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=640&h=360&fit=crop" alt="Space">
+                    <div class="play-overlay"><div class="play-btn" style="width:50px;height:50px;font-size:1.2rem">▶</div></div>
+                    <div class="duration">45:20</div>
+                </div>
+                <div class="video-info">
+                    <span class="video-category">Documentary</span>
+                    <h3 class="video-title">Journey to Mars</h3>
+                    <div class="video-meta">3 days ago • 187K views</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="load-more"><button class="load-more-btn">Load More Videos</button></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Global Daily Tribune</h3>
+                <p>Watch our latest video coverage and documentaries.</p>
+                <div class="social-links" style="margin-top:1.5rem;">
+                    <a href="#"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Politics</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">World</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Videos</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Breaking News</a></li>
+                    <li><a href="#">Documentaries</a></li>
+                    <li><a href="#">Interviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about-page.html">About</a></li>
+                    <li><a href="contact-page.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Global Daily Tribune. All rights reserved.</p>
+            <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+        </div>
+    </footer>
+
+    <script src="navigation-system.js"></script>
+    <script>
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        document.querySelectorAll('.video-card, .featured-video').forEach(card => {
+            card.addEventListener('click', () => alert('Video player would open'));
+        });
+    </script>
+</body>
+</html>
