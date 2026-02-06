@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact CyberVerse NFT - Get in touch with our support team, ask questions, or submit partnership inquiries. We're here to help 24/7.">
+    <meta name="keywords" content="contact CyberVerse, NFT support, customer service, partnership inquiry, help center, contact form">
+    <title>Contact Us - CyberVerse NFT Platform</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-pink: #ff0080;
+            --neon-blue: #00f0ff;
+            --neon-purple: #b000ff;
+            --neon-green: #00ff88;
+            --neon-yellow: #ffff00;
+            --dark-bg: #0a0a0f;
+            --dark-card: #1a1a2e;
+            --glass-bg: rgba(26, 26, 46, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark-bg);
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .cyber-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(255, 0, 128, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(0, 240, 255, 0.15) 0%, transparent 50%);
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: var(--neon-blue);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            min-width: 200px;
+            box-shadow: 0 8px 32px rgba(0, 240, 255, 0.2);
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+
+        .dropdown::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 0.5rem;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        .connect-wallet-btn {
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--neon-blue);
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .main-content {
+            padding: 120px 2rem 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-info-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--neon-blue);
+            margin-bottom: 2rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s;
+        }
+
+        .contact-method:hover {
+            border-color: var(--neon-purple);
+            background: rgba(176, 0, 255, 0.05);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            min-width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.3);
+        }
+
+        .contact-details h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-details p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: var(--neon-pink);
+        }
+
+        .social-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3);
+        }
+
+        .social-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-card-name {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-form-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--neon-blue);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-input, .form-textarea, .form-select {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-select option {
+            background: var(--dark-card);
+            color: white;
+        }
+
+        .required {
+            color: var(--neon-pink);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 30px rgba(255, 0, 128, 0.5);
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(255, 0, 128, 0.8);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .faq-section {
+            margin-top: 4rem;
+        }
+
+        .faq-title {
+            font-size: 2.5rem;
+            color: var(--neon-pink);
+            text-align: center;
+            margin-bottom: 3rem;
+            text-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .faq-item:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 5px 30px rgba(0, 240, 255, 0.2);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--neon-blue);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-top: 1rem;
+        }
+
+        .office-section {
+            margin-top: 4rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .office-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .office-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .office-card:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 5px 30px rgba(0, 255, 136, 0.2);
+        }
+
+        .office-card h3 {
+            color: var(--neon-green);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .office-card p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--neon-green);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            z-index: 2000;
+            box-shadow: 0 10px 50px rgba(0, 255, 136, 0.3);
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideUp 0.5s;
+        }
+
+        @keyframes slideUp {
+            from { transform: translate(-50%, -40%); opacity: 0; }
+            to { transform: translate(-50%, -50%); opacity: 1; }
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-message h3 {
+            color: var(--neon-green);
+            margin-bottom: 1rem;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1999;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+
+        @media (max-width: 968px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .office-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-bg"></div>
+    <div class="grid-overlay"></div>
+    <div class="overlay" id="overlay"></div>
+
+    <header>
+        <nav>
+            <a href="nft-platform-cyberpunk.html" class="logo">⚡ CyberVerse</a>
+            
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="explore.html">Explore ▾</a>
+                    <div class="dropdown-content">
+                        <a href="explore.html">All NFTs</a>
+                        <a href="#trending">Trending</a>
+                        <a href="#art">Digital Art</a>
+                        <a href="#collectibles">Collectibles</a>
+                        <a href="#music">Music</a>
+                        <a href="#gaming">Gaming</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="marketplace.html">Marketplace ▾</a>
+                    <div class="dropdown-content">
+                        <a href="marketplace.html">Buy NFTs</a>
+                        <a href="#sell">Sell NFTs</a>
+                        <a href="#auctions">Live Auctions</a>
+                        <a href="#drops">Upcoming Drops</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="create.html">Create ▾</a>
+                    <div class="dropdown-content">
+                        <a href="create.html">Mint NFT</a>
+                        <a href="#collection">Create Collection</a>
+                        <a href="#tools">Creator Tools</a>
+                    </div>
+                </li>
+                <li><a href="creators.html">Creators</a></li>
+                <li class="dropdown">
+                    <a href="#resources">Resources ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#learn">Learn Web3</a>
+                        <a href="#blog">Blog</a>
+                        <a href="#docs">Documentation</a>
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#support">Support</a>
+                    </div>
+                </li>
+                <li><button class="connect-wallet-btn">Connect Wallet</button></li>
+            </ul>
+
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="page-header">
+            <h1>Get In Touch</h1>
+            <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+        </div>
+
+        <div class="contact-layout">
+            <!-- Contact Information -->
+            <div class="contact-info-section">
+                <h2 class="section-title">Contact Information</h2>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p>General Inquiries:</p>
+                            <a href="mailto:hello@cyberverse.io">hello@cyberverse.io</a>
+                            <p>Support:</p>
+                            <a href="mailto:support@cyberverse.io">support@cyberverse.io</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-details">
+                            <h3>Live Chat</h3>
+                            <p>Available 24/7</p>
+                            <a href="#chat">Start a conversation</a>
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Average response time: 2 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Phone Support</h3>
+                            <p>US: <a href="tel:+1-800-CYBER-NFT">+1-800-CYBER-NFT</a></p>
+                            <p>UK: <a href="tel:+44-20-CYBER-NFT">+44-20-CYBER-NFT</a></p>
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Mon-Fri: 9AM - 6PM (GMT)</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">🤝</div>
+                        <div class="contact-details">
+                            <h3>Partnerships</h3>
+                            <p>Business Development:</p>
+                            <a href="mailto:partners@cyberverse.io">partners@cyberverse.io</a>
+                            <p>Brand Collaborations:</p>
+                            <a href="mailto:brands@cyberverse.io">brands@cyberverse.io</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-section">
+                    <h3 style="color: var(--neon-blue); margin-bottom: 1rem;">Follow Us</h3>
+                    <div class="social-grid">
+                        <div class="social-card">
+                            <div class="social-card-icon">🐦</div>
+                            <div class="social-card-name">Twitter</div>
+                        </div>
+                        <div class="social-card">
+                            <div class="social-card-icon">💬</div>
+                            <div class="social-card-name">Discord</div>
+                        </div>
+                        <div class="social-card">
+                            <div class="social-card-icon">📷</div>
+                            <div class="social-card-name">Instagram</div>
+                        </div>
+                        <div class="social-card">
+                            <div class="social-card-icon">📱</div>
+                            <div class="social-card-name">Telegram</div>
+                        </div>
+                        <div class="social-card">
+                            <div class="social-card-icon">💼</div>
+                            <div class="social-card-name">LinkedIn</div>
+                        </div>
+                        <div class="social-card">
+                            <div class="social-card-icon">▶️</div>
+                            <div class="social-card-name">YouTube</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <h2 class="section-title">Send Us A Message</h2>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>Name <span class="required">*</span></label>
+                        <input type="text" class="form-input" name="name" placeholder="Your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" class="form-input" name="email" placeholder="your.email@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Subject <span class="required">*</span></label>
+                        <select class="form-select" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="account">Account Issues</option>
+                            <option value="nft">NFT Related</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="press">Press & Media</option>
+                            <option value="feedback">Feedback & Suggestions</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Wallet Address (Optional)</label>
+                        <input type="text" class="form-input" name="wallet" placeholder="0x...">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message <span class="required">*</span></label>
+                        <textarea class="form-textarea" name="message" placeholder="Tell us more about your inquiry..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I create an account?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Simply connect your Web3 wallet (MetaMask, WalletConnect, etc.) to get started. No traditional signup required – your wallet is your account!
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What are the fees for minting NFTs?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        We charge a 2.5% platform fee on successful sales. Minting is free, but you'll need to pay gas fees on the blockchain network.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does verification take?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Creator verification typically takes 2-5 business days. You'll need to provide social media links and portfolio samples.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I sell NFTs created on other platforms?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! CyberVerse supports cross-platform trading. You can list any ERC-721 or ERC-1155 NFT from other marketplaces.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What payment methods do you accept?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        We accept ETH, WETH, USDC, and other major cryptocurrencies. Credit card support for buying crypto is coming soon!
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do royalties work?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Creators can set royalties up to 50% on secondary sales. You'll automatically receive your share whenever your NFT is resold.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Office Locations -->
+        <section class="office-section">
+            <h2 class="section-title">Our Global Offices</h2>
+            <div class="office-grid">
+                <div class="office-card">
+                    <h3>🇺🇸 United States</h3>
+                    <p><strong>San Francisco HQ</strong></p>
+                    <p>123 Blockchain Avenue</p>
+                    <p>San Francisco, CA 94102</p>
+                    <p style="margin-top: 1rem; color: var(--neon-blue);">
+                        <a href="mailto:us@cyberverse.io" style="color: var(--neon-blue);">us@cyberverse.io</a>
+                    </p>
+                </div>
+
+                <div class="office-card">
+                    <h3>🇬🇧 United Kingdom</h3>
+                    <p><strong>London Office</strong></p>
+                    <p>456 Web3 Street</p>
+                    <p>London, EC2A 4BX</p>
+                    <p style="margin-top: 1rem; color: var(--neon-blue);">
+                        <a href="mailto:uk@cyberverse.io" style="color: var(--neon-blue);">uk@cyberverse.io</a>
+                    </p>
+                </div>
+
+                <div class="office-card">
+                    <h3>🇸🇬 Singapore</h3>
+                    <p><strong>Asia-Pacific Hub</strong></p>
+                    <p>789 Crypto Boulevard</p>
+                    <p>Singapore 018956</p>
+                    <p style="margin-top: 1rem; color: var(--neon-blue);">
+                        <a href="mailto:asia@cyberverse.io" style="color: var(--neon-blue);">asia@cyberverse.io</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <div class="success-icon">✅</div>
+        <h3>Message Sent Successfully!</h3>
+        <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 2rem;">
+            Thank you for contacting us. We'll get back to you within 24 hours.
+        </p>
+        <button class="submit-btn" onclick="closeSuccessMessage()" style="max-width: 200px; margin: 0 auto;">Close</button>
+    </div>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== this) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                this.classList.toggle('active');
+            });
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Show success message
+                document.getElementById('successMessage').classList.add('show');
+                document.getElementById('overlay').classList.add('show');
+                
+                // Reset form
+                this.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }, 1500);
+        });
+
+        function closeSuccessMessage() {
+            document.getElementById('successMessage').classList.remove('show');
+            document.getElementById('overlay').classList.remove('show');
+        }
+
+        // Close success message when clicking overlay
+        document.getElementById('overlay').addEventListener('click', closeSuccessMessage);
+
+        // Social cards click handlers
+        document.querySelectorAll('.social-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const platform = this.querySelector('.social-card-name').textContent;
+                console.log(`Navigate to ${platform}`);
+                // Add actual social media links here
+            });
+        });
+
+        // Animate contact methods on scroll
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.contact-method').forEach((method, index) => {
+            method.style.opacity = '0';
+            method.style.transform = 'translateX(-30px)';
+            method.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(method);
+        });
+    </script>
+</body>
+</html>
