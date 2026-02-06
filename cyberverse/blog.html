@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CyberVerse NFT Blog - Latest news, insights, tutorials, and updates about NFTs, blockchain technology, and the Web3 ecosystem.">
+    <meta name="keywords" content="NFT blog, blockchain news, Web3 articles, crypto insights, NFT tutorials, digital art news">
+    <title>Blog - News & Insights | CyberVerse NFT</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-pink: #ff0080;
+            --neon-blue: #00f0ff;
+            --neon-purple: #b000ff;
+            --neon-green: #00ff88;
+            --neon-yellow: #ffff00;
+            --dark-bg: #0a0a0f;
+            --dark-card: #1a1a2e;
+            --glass-bg: rgba(26, 26, 46, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark-bg);
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .cyber-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(255, 0, 128, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(0, 240, 255, 0.15) 0%, transparent 50%);
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: var(--neon-blue);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            min-width: 200px;
+            box-shadow: 0 8px 32px rgba(0, 240, 255, 0.2);
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+
+        .dropdown::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 0.5rem;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        .connect-wallet-btn {
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--neon-blue);
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .main-content {
+            padding: 120px 2rem 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .blog-filters {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-bar {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: var(--neon-blue);
+        }
+
+        .category-filter {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--neon-blue);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        .featured-post {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 4rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .featured-post:hover {
+            border-color: var(--neon-pink);
+            box-shadow: 0 15px 50px rgba(255, 0, 128, 0.4);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            position: relative;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 0, 128, 0.9);
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .featured-content {
+            padding: 3rem;
+        }
+
+        .featured-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .featured-title {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .featured-excerpt {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .read-more-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 30px rgba(255, 0, 128, 0.6);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 15px 50px rgba(0, 240, 255, 0.3);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.3rem 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .blog-meta-item {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .author-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .author-name {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .read-time {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .page-btn {
+            padding: 0.8rem 1.2rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .page-btn:hover, .page-btn.active {
+            background: var(--neon-blue);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        .newsletter-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        .newsletter-section h2 {
+            font-size: 2.5rem;
+            color: var(--neon-pink);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-section p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-title {
+                font-size: 2rem;
+            }
+
+            .blog-filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-bar {
+                min-width: 100%;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-bg"></div>
+    <div class="grid-overlay"></div>
+
+    <header>
+        <nav>
+            <a href="nft-platform-cyberpunk.html" class="logo">⚡ CyberVerse</a>
+            
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="explore.html">Explore ▾</a>
+                    <div class="dropdown-content">
+                        <a href="explore.html">All NFTs</a>
+                        <a href="#trending">Trending</a>
+                        <a href="#art">Digital Art</a>
+                        <a href="#collectibles">Collectibles</a>
+                        <a href="#music">Music</a>
+                        <a href="#gaming">Gaming</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="marketplace.html">Marketplace ▾</a>
+                    <div class="dropdown-content">
+                        <a href="marketplace.html">Buy NFTs</a>
+                        <a href="#sell">Sell NFTs</a>
+                        <a href="#auctions">Live Auctions</a>
+                        <a href="#drops">Upcoming Drops</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="create.html">Create ▾</a>
+                    <div class="dropdown-content">
+                        <a href="create.html">Mint NFT</a>
+                        <a href="#collection">Create Collection</a>
+                        <a href="#tools">Creator Tools</a>
+                    </div>
+                </li>
+                <li><a href="creators.html">Creators</a></li>
+                <li class="dropdown">
+                    <a href="#resources">Resources ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#learn">Learn Web3</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="#docs">Documentation</a>
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="careers.html">Careers</a>
+                        <a href="#support">Support</a>
+                    </div>
+                </li>
+                <li><button class="connect-wallet-btn">Connect Wallet</button></li>
+            </ul>
+
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="page-header">
+            <h1>CyberVerse Blog</h1>
+            <p>Latest news, insights, and updates from the world of NFTs and Web3</p>
+        </div>
+
+        <!-- Search & Filters -->
+        <div class="blog-filters">
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" placeholder="Search articles..." id="searchInput">
+            </div>
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="news">News</button>
+                <button class="filter-btn" data-category="tutorials">Tutorials</button>
+                <button class="filter-btn" data-category="insights">Insights</button>
+                <button class="filter-btn" data-category="updates">Updates</button>
+            </div>
+        </div>
+
+        <!-- Featured Post -->
+        <article class="featured-post">
+            <div class="featured-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                🚀
+                <div class="featured-badge">Featured</div>
+            </div>
+            <div class="featured-content">
+                <div class="featured-meta">
+                    <span class="meta-item">📅 December 15, 2024</span>
+                    <span class="meta-item">📁 News</span>
+                    <span class="meta-item">⏱️ 8 min read</span>
+                </div>
+                <h2 class="featured-title">The Future of NFTs: What to Expect in 2025</h2>
+                <p class="featured-excerpt">
+                    As we approach 2025, the NFT landscape is evolving rapidly. From AI-generated art to real-world asset tokenization, discover the trends that will shape the future of digital ownership. We explore emerging technologies, market predictions, and how CyberVerse is positioning itself at the forefront of this revolution.
+                </p>
+                <a href="#" class="read-more-btn">Read Full Article</a>
+            </div>
+        </article>
+
+        <!-- Blog Grid -->
+        <div class="blog-grid" id="blogGrid">
+            <!-- Blog posts will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="page-btn">← Prev</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">Next →</button>
+        </div>
+
+        <!-- Newsletter -->
+        <section class="newsletter-section">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the latest NFT news, tips, and exclusive updates delivered to your inbox</p>
+            <form class="newsletter-form" onsubmit="return subscribeNewsletter(event)">
+                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                <button type="submit" class="read-more-btn">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Blog posts data
+        const blogPosts = [
+            {
+                emoji: '💎',
+                title: 'Smart Contract Security: Best Practices for NFT Creators',
+                category: 'tutorials',
+                excerpt: 'Learn how to protect your NFT projects from vulnerabilities and ensure your smart contracts are audit-ready.',
+                author: 'Sarah Chen',
+                date: 'Dec 12, 2024',
+                readTime: '6 min',
+                gradient: 'linear-gradient(135deg, #f093fb, #f5576c)'
+            },
+            {
+                emoji: '🎨',
+                title: 'Top 10 Digital Artists to Watch in 2025',
+                category: 'insights',
+                excerpt: 'Discover emerging talents who are pushing the boundaries of digital art and NFT creativity.',
+                author: 'Marcus Lee',
+                date: 'Dec 10, 2024',
+                readTime: '5 min',
+                gradient: 'linear-gradient(135deg, #4facfe, #00f2fe)'
+            },
+            {
+                emoji: '📊',
+                title: 'NFT Market Analysis: Q4 2024 Trends',
+                category: 'insights',
+                excerpt: 'A comprehensive look at trading volumes, popular categories, and market predictions for the coming year.',
+                author: 'Alex Thompson',
+                date: 'Dec 8, 2024',
+                readTime: '10 min',
+                gradient: 'linear-gradient(135deg, #fa709a, #fee140)'
+            },
+            {
+                emoji: '🔧',
+                title: 'How to Mint Your First NFT: Complete Guide',
+                category: 'tutorials',
+                excerpt: 'Step-by-step tutorial for beginners on creating, minting, and listing your first NFT on CyberVerse.',
+                author: 'Emma Davis',
+                date: 'Dec 5, 2024',
+                readTime: '7 min',
+                gradient: 'linear-gradient(135deg, #a8edea, #fed6e3)'
+            },
+            {
+                emoji: '🌟',
+                title: 'CyberVerse Platform Update: New Features Released',
+                category: 'updates',
+                excerpt: 'Explore our latest features including enhanced creator tools, improved search, and gas optimization.',
+                author: 'CyberVerse Team',
+                date: 'Dec 3, 2024',
+                readTime: '4 min',
+                gradient: 'linear-gradient(135deg, #ff9a9e, #fecfef)'
+            },
+            {
+                emoji: '🎮',
+                title: 'Gaming NFTs: The Next Frontier',
+                category: 'insights',
+                excerpt: 'How blockchain gaming is revolutionizing digital asset ownership and creating new economies.',
+                author: 'David Park',
+                date: 'Dec 1, 2024',
+                readTime: '8 min',
+                gradient: 'linear-gradient(135deg, #ffecd2, #fcb69f)'
+            },
+            {
+                emoji: '💰',
+                title: 'Understanding NFT Royalties: Creator Guide',
+                category: 'tutorials',
+                excerpt: 'Master the art of setting up royalties to earn passive income from secondary sales.',
+                author: 'Lisa Wang',
+                date: 'Nov 28, 2024',
+                readTime: '6 min',
+                gradient: 'linear-gradient(135deg, #667eea, #764ba2)'
+            },
+            {
+                emoji: '🌍',
+                title: 'Global NFT Adoption: Regional Insights',
+                category: 'news',
+                excerpt: 'Analyzing NFT adoption rates across different regions and what it means for the industry.',
+                author: 'Roberto Silva',
+                date: 'Nov 25, 2024',
+                readTime: '9 min',
+                gradient: 'linear-gradient(135deg, #fdcbf1, #e6dee9)'
+            },
+            {
+                emoji: '🔐',
+                title: 'Web3 Security: Protecting Your NFT Wallet',
+                category: 'tutorials',
+                excerpt: 'Essential security practices every NFT collector needs to know to keep their assets safe.',
+                author: 'Sarah Chen',
+                date: 'Nov 22, 2024',
+                readTime: '5 min',
+                gradient: 'linear-gradient(135deg, #a1c4fd, #c2e9fb)'
+            }
+        ];
+
+        // Render blog posts
+        function renderBlogPosts(posts) {
+            const blogGrid = document.getElementById('blogGrid');
+            blogGrid.innerHTML = '';
+
+            posts.forEach(post => {
+                const card = document.createElement('article');
+                card.className = 'blog-card';
+                card.dataset.category = post.category;
+                card.innerHTML = `
+                    <div class="blog-image" style="background: ${post.gradient}">
+                        ${post.emoji}
+                        <div class="category-badge">${post.category}</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-meta-item">📅 ${post.date}</span>
+                            <span class="blog-meta-item">⏱️ ${post.readTime}</span>
+                        </div>
+                        <h3 class="blog-title">${post.title}</h3>
+                        <p class="blog-excerpt">${post.excerpt}</p>
+                        <div class="blog-footer">
+                            <div class="author-info">
+                                <div class="author-avatar">${post.author[0]}</div>
+                                <span class="author-name">${post.author}</span>
+                            </div>
+                            <span class="read-time">${post.readTime} read</span>
+                        </div>
+                    </div>
+                `;
+                blogGrid.appendChild(card);
+            });
+        }
+
+        // Initial render
+        renderBlogPosts(blogPosts);
+
+        // Category filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const category = this.dataset.category;
+                const filteredPosts = category === 'all' 
+                    ? blogPosts 
+                    : blogPosts.filter(post => post.category === category);
+                
+                renderBlogPosts(filteredPosts);
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const filteredPosts = blogPosts.filter(post => 
+                post.title.toLowerCase().includes(searchTerm) ||
+                post.excerpt.toLowerCase().includes(searchTerm) ||
+                post.category.toLowerCase().includes(searchTerm)
+            );
+            renderBlogPosts(filteredPosts);
+        });
+
+        // Newsletter subscription
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const input = event.target.querySelector('input');
+            const button = event.target.querySelector('button');
+            const originalText = button.textContent;
+            
+            button.textContent = 'Subscribing...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.textContent = '✓ Subscribed!';
+                button.style.background = 'linear-gradient(135deg, var(--neon-green), var(--neon-blue))';
+                input.value = '';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                    button.disabled = false;
+                }, 2000);
+            }, 1500);
+            
+            return false;
+        }
+
+        // Animate cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Re-observe when new cards are rendered
+        function observeCards() {
+            document.querySelectorAll('.blog-card').forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        }
+
+        observeCards();
+
+        // Re-observe after filtering
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTimeout(observeCards, 100);
+            });
+        });
+    </script>
+</body>
+</html>
