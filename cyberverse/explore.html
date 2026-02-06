@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore all NFTs on CyberVerse - Browse thousands of unique digital assets, filter by category, and discover your next collectible.">
+    <meta name="keywords" content="explore NFTs, browse NFTs, NFT gallery, digital art marketplace, crypto collectibles">
+    <title>Explore All NFTs - CyberVerse NFT Marketplace</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-pink: #ff0080;
+            --neon-blue: #00f0ff;
+            --neon-purple: #b000ff;
+            --neon-green: #00ff88;
+            --neon-yellow: #ffff00;
+            --dark-bg: #0a0a0f;
+            --dark-card: #1a1a2e;
+            --glass-bg: rgba(26, 26, 46, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark-bg);
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .cyber-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(255, 0, 128, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(0, 240, 255, 0.15) 0%, transparent 50%);
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: var(--neon-blue);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            min-width: 200px;
+            box-shadow: 0 8px 32px rgba(0, 240, 255, 0.2);
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+
+        .dropdown::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 0.5rem;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        .connect-wallet-btn {
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--neon-blue);
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .main-content {
+            padding: 120px 2rem 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .filter-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-group label {
+            display: block;
+            color: var(--neon-blue);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .filter-select, .search-input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .filter-select:focus, .search-input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .filter-select option {
+            background: var(--dark-card);
+            color: white;
+        }
+
+        .search-bar {
+            position: relative;
+        }
+
+        .search-input {
+            padding-left: 3rem;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: var(--neon-blue);
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .results-count {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .view-options {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .view-btn {
+            padding: 0.6rem 1rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .view-btn.active {
+            background: var(--neon-blue);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        .nft-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .nft-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .nft-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-pink);
+            box-shadow: 0 15px 50px rgba(255, 0, 128, 0.4);
+        }
+
+        .nft-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nft-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+        }
+
+        .nft-info {
+            padding: 1.5rem;
+        }
+
+        .nft-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .nft-creator {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .nft-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .price-info {
+            flex: 1;
+        }
+
+        .price-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+        }
+
+        .price-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--neon-green);
+        }
+
+        .buy-btn {
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .buy-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 0, 128, 0.5);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .page-btn {
+            padding: 0.8rem 1.2rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .page-btn:hover, .page-btn.active {
+            background: var(--neon-blue);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        .loading-more {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .load-more-btn {
+            padding: 1rem 3rem;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .load-more-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 30px rgba(0, 240, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .filter-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nft-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .results-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-bg"></div>
+    <div class="grid-overlay"></div>
+
+    <header>
+        <nav>
+            <a href="nft-platform-cyberpunk.html" class="logo">⚡ CyberVerse</a>
+            
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="explore.html">Explore ▾</a>
+                    <div class="dropdown-content">
+                        <a href="explore.html">All NFTs</a>
+                        <a href="#trending">Trending</a>
+                        <a href="#art">Digital Art</a>
+                        <a href="#collectibles">Collectibles</a>
+                        <a href="#music">Music</a>
+                        <a href="#gaming">Gaming</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="marketplace.html">Marketplace ▾</a>
+                    <div class="dropdown-content">
+                        <a href="marketplace.html">Buy NFTs</a>
+                        <a href="#sell">Sell NFTs</a>
+                        <a href="#auctions">Live Auctions</a>
+                        <a href="#drops">Upcoming Drops</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="create.html">Create ▾</a>
+                    <div class="dropdown-content">
+                        <a href="create.html">Mint NFT</a>
+                        <a href="#collection">Create Collection</a>
+                        <a href="#tools">Creator Tools</a>
+                    </div>
+                </li>
+                <li><a href="creators.html">Creators</a></li>
+                <li class="dropdown">
+                    <a href="#resources">Resources ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#learn">Learn Web3</a>
+                        <a href="#blog">Blog</a>
+                        <a href="#docs">Documentation</a>
+                        <a href="#support">Support</a>
+                    </div>
+                </li>
+                <li><button class="connect-wallet-btn">Connect Wallet</button></li>
+            </ul>
+
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="page-header">
+            <h1>Explore NFTs</h1>
+            <p>Discover unique digital assets from talented creators worldwide</p>
+        </div>
+
+        <div class="filter-section">
+            <div class="filter-grid">
+                <div class="filter-group search-bar">
+                    <label>Search</label>
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Search by name, creator, or collection...">
+                </div>
+
+                <div class="filter-group">
+                    <label>Category</label>
+                    <select class="filter-select">
+                        <option value="">All Categories</option>
+                        <option value="art">Digital Art</option>
+                        <option value="collectibles">Collectibles</option>
+                        <option value="music">Music</option>
+                        <option value="photography">Photography</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="virtual-land">Virtual Land</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Price Range</label>
+                    <select class="filter-select">
+                        <option value="">All Prices</option>
+                        <option value="0-1">0 - 1 ETH</option>
+                        <option value="1-5">1 - 5 ETH</option>
+                        <option value="5-10">5 - 10 ETH</option>
+                        <option value="10+">10+ ETH</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Sort By</label>
+                    <select class="filter-select">
+                        <option value="recent">Recently Listed</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="ending">Ending Soon</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-header">
+            <div class="results-count">
+                <strong style="color: var(--neon-green);">8,542</strong> NFTs Found
+            </div>
+            <div class="view-options">
+                <button class="view-btn active">Grid 🔲</button>
+                <button class="view-btn">List 📋</button>
+            </div>
+        </div>
+
+        <div class="nft-grid" id="nftGrid">
+            <!-- NFT Cards will be generated here -->
+        </div>
+
+        <div class="loading-more">
+            <button class="load-more-btn">Load More NFTs</button>
+        </div>
+
+        <!-- Pagination 
+        <div class="pagination">
+            <button class="page-btn">← Prev</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">5</button>
+            <button class="page-btn">Next →</button>
+        </div>
+        -->
+    </main>
+
+    <script>
+        // Generate NFT cards dynamically
+        const nftData = [
+            { emoji: '🎨', title: 'Cyber Punk #4521', creator: 'CryptoArtist', price: '2.5', gradient: 'linear-gradient(135deg, #b000ff, #ff0080)', badge: 'Hot' },
+            { emoji: '🌊', title: 'Digital Waves #1337', creator: 'WaveDesign', price: '1.8', gradient: 'linear-gradient(135deg, #00f0ff, #00ff88)' },
+            { emoji: '🚀', title: 'Space Explorer #888', creator: 'CosmicArts', price: '3.2', gradient: 'linear-gradient(135deg, #00ff88, #ffff00)', badge: 'New' },
+            { emoji: '🎭', title: 'Abstract Mind #2077', creator: 'MindBender', price: '1.5', gradient: 'linear-gradient(135deg, #b000ff, #ff0080)' },
+            { emoji: '💎', title: 'Diamond Genesis #100', creator: 'GemCraft', price: '5.2', gradient: 'linear-gradient(135deg, #ff6b6b, #ee5a6f)', badge: 'Rare' },
+            { emoji: '🌌', title: 'Cosmic Portal #777', creator: 'SpaceWorks', price: '4.7', gradient: 'linear-gradient(135deg, #4ecdc4, #44a08d)' },
+            { emoji: '🎪', title: 'Carnival Dreams #555', creator: 'DreamScape', price: '3.9', gradient: 'linear-gradient(135deg, #f093fb, #f5576c)' },
+            { emoji: '🔮', title: 'Crystal Vision #999', creator: 'MysticArts', price: '2.8', gradient: 'linear-gradient(135deg, #a8edea, #fed6e3)' },
+            { emoji: '🎸', title: 'Rock Legend #420', creator: 'MusicMaker', price: '1.9', gradient: 'linear-gradient(135deg, #ff9a9e, #fecfef)' },
+            { emoji: '🏆', title: 'Champion Trophy #001', creator: 'VictoryLabs', price: '6.5', gradient: 'linear-gradient(135deg, #fbc2eb, #a6c1ee)', badge: 'Epic' },
+            { emoji: '🎮', title: 'Pixel Warrior #2048', creator: 'GameForge', price: '2.2', gradient: 'linear-gradient(135deg, #fdcbf1, #e6dee9)' },
+            { emoji: '🦄', title: 'Magic Unicorn #333', creator: 'FantasyWorld', price: '4.1', gradient: 'linear-gradient(135deg, #a1c4fd, #c2e9fb)' },
+        ];
+
+        const nftGrid = document.getElementById('nftGrid');
+
+        function generateNFTCards() {
+            nftData.forEach(nft => {
+                const card = document.createElement('div');
+                card.className = 'nft-card';
+                card.innerHTML = `
+                    <div class="nft-image" style="background: ${nft.gradient}">
+                        ${nft.emoji}
+                        ${nft.badge ? `<div class="nft-badge">${nft.badge}</div>` : ''}
+                    </div>
+                    <div class="nft-info">
+                        <h3 class="nft-title">${nft.title}</h3>
+                        <p class="nft-creator">👤 by ${nft.creator}</p>
+                        <div class="nft-price">
+                            <div class="price-info">
+                                <div class="price-label">Current Price</div>
+                                <div class="price-value">${nft.price} ETH</div>
+                            </div>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                `;
+                nftGrid.appendChild(card);
+            });
+        }
+
+        generateNFTCards();
+
+        // Load more functionality
+        document.querySelector('.load-more-btn').addEventListener('click', function() {
+            this.innerHTML = 'Loading...';
+            setTimeout(() => {
+                generateNFTCards();
+                this.innerHTML = 'Load More NFTs';
+            }, 1000);
+        });
+
+        // View toggle
+        const viewBtns = document.querySelectorAll('.view-btn');
+        viewBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                viewBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
