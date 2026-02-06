@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover top NFT creators on CyberVerse - Follow talented artists, explore their collections, and connect with the creative community.">
+    <meta name="keywords" content="NFT creators, digital artists, crypto artists, NFT collections, creator profiles, artist community">
+    <title>Top NFT Creators - CyberVerse NFT Marketplace</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-pink: #ff0080;
+            --neon-blue: #00f0ff;
+            --neon-purple: #b000ff;
+            --neon-green: #00ff88;
+            --neon-yellow: #ffff00;
+            --dark-bg: #0a0a0f;
+            --dark-card: #1a1a2e;
+            --glass-bg: rgba(26, 26, 46, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark-bg);
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .cyber-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(255, 0, 128, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(0, 240, 255, 0.15) 0%, transparent 50%);
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: var(--neon-blue);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            min-width: 200px;
+            box-shadow: 0 8px 32px rgba(0, 240, 255, 0.2);
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+
+        .dropdown::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 0.5rem;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        .connect-wallet-btn {
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--neon-blue);
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .main-content {
+            padding: 120px 2rem 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 0.8rem 2rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-tab:hover, .filter-tab.active {
+            background: var(--neon-blue);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        .search-bar {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: var(--neon-blue);
+        }
+
+        .creators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .creator-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .creator-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-purple);
+            box-shadow: 0 15px 50px rgba(176, 0, 255, 0.3);
+        }
+
+        .rank-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+        }
+
+        .creator-card-inner {
+            position: relative;
+        }
+
+        .creator-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            border: 3px solid var(--neon-purple);
+            box-shadow: 0 0 30px rgba(176, 0, 255, 0.5);
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: var(--neon-blue);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--dark-bg);
+        }
+
+        .creator-name {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .creator-username {
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .creator-bio {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .creator-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem 0;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--neon-green);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            display: block;
+            margin-top: 0.3rem;
+        }
+
+        .follow-btn {
+            width: 100%;
+            padding: 0.9rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .follow-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 30px rgba(255, 0, 128, 0.6);
+        }
+
+        .follow-btn.following {
+            background: transparent;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+        }
+
+        .follow-btn.following:hover {
+            background: rgba(0, 240, 255, 0.1);
+            box-shadow: 0 5px 30px rgba(0, 240, 255, 0.3);
+        }
+
+        .leaderboard-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .leaderboard-title {
+            font-size: 2rem;
+            color: var(--neon-pink);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .leaderboard-table {
+            width: 100%;
+        }
+
+        .leaderboard-row {
+            display: grid;
+            grid-template-columns: 60px 1fr 150px 150px 150px;
+            gap: 1rem;
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .leaderboard-row:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .leaderboard-row:last-child {
+            border-bottom: none;
+        }
+
+        .lb-rank {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--neon-pink);
+            text-align: center;
+        }
+
+        .lb-creator {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lb-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .lb-info {
+            flex: 1;
+        }
+
+        .lb-name {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .lb-username {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .lb-volume, .lb-sales, .lb-followers {
+            text-align: right;
+            color: var(--neon-green);
+            font-weight: 600;
+        }
+
+        .lb-label {
+            display: block;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 0.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .creators-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leaderboard-row {
+                grid-template-columns: 40px 1fr;
+                gap: 0.5rem;
+            }
+
+            .lb-volume, .lb-sales, .lb-followers {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-bg"></div>
+    <div class="grid-overlay"></div>
+
+    <header>
+        <nav>
+            <a href="nft-platform-cyberpunk.html" class="logo">⚡ CyberVerse</a>
+            
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="explore.html">Explore ▾</a>
+                    <div class="dropdown-content">
+                        <a href="explore.html">All NFTs</a>
+                        <a href="#trending">Trending</a>
+                        <a href="#art">Digital Art</a>
+                        <a href="#collectibles">Collectibles</a>
+                        <a href="#music">Music</a>
+                        <a href="#gaming">Gaming</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="marketplace.html">Marketplace ▾</a>
+                    <div class="dropdown-content">
+                        <a href="marketplace.html">Buy NFTs</a>
+                        <a href="#sell">Sell NFTs</a>
+                        <a href="#auctions">Live Auctions</a>
+                        <a href="#drops">Upcoming Drops</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="create.html">Create ▾</a>
+                    <div class="dropdown-content">
+                        <a href="create.html">Mint NFT</a>
+                        <a href="#collection">Create Collection</a>
+                        <a href="#tools">Creator Tools</a>
+                    </div>
+                </li>
+                <li><a href="creators.html">Creators</a></li>
+                <li class="dropdown">
+                    <a href="#resources">Resources ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#learn">Learn Web3</a>
+                        <a href="#blog">Blog</a>
+                        <a href="#docs">Documentation</a>
+                        <a href="#support">Support</a>
+                    </div>
+                </li>
+                <li><button class="connect-wallet-btn">Connect Wallet</button></li>
+            </ul>
+
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="page-header">
+            <h1>Top NFT Creators</h1>
+            <p>Discover and follow the most talented artists in the Web3 space</p>
+        </div>
+
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search creators by name or username...">
+        </div>
+
+        <div class="filter-tabs">
+            <button class="filter-tab active">All Creators</button>
+            <button class="filter-tab">Trending</button>
+            <button class="filter-tab">Top Sellers</button>
+            <button class="filter-tab">Verified</button>
+            <button class="filter-tab">New</button>
+        </div>
+
+        <!-- Top Leaderboard -->
+        <div class="leaderboard-section">
+            <h2 class="leaderboard-title">🏆 Top 10 Creators</h2>
+            <div class="leaderboard-table">
+                <div class="leaderboard-row">
+                    <div class="lb-rank">#1</div>
+                    <div class="lb-creator">
+                        <div class="lb-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">👑</div>
+                        <div class="lb-info">
+                            <div class="lb-name">CyberArtist ✓</div>
+                            <div class="lb-username">@cyberartist</div>
+                        </div>
+                    </div>
+                    <div class="lb-volume">
+                        <span class="lb-label">Volume</span>
+                        1,250 ETH
+                    </div>
+                    <div class="lb-sales">
+                        <span class="lb-label">Sales</span>
+                        2,458
+                    </div>
+                    <div class="lb-followers">
+                        <span class="lb-label">Followers</span>
+                        45.2K
+                    </div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="lb-rank">#2</div>
+                    <div class="lb-creator">
+                        <div class="lb-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);">🎨</div>
+                        <div class="lb-info">
+                            <div class="lb-name">NeonDreamer ✓</div>
+                            <div class="lb-username">@neondreamer</div>
+                        </div>
+                    </div>
+                    <div class="lb-volume">
+                        <span class="lb-label">Volume</span>
+                        1,120 ETH
+                    </div>
+                    <div class="lb-sales">
+                        <span class="lb-label">Sales</span>
+                        2,187
+                    </div>
+                    <div class="lb-followers">
+                        <span class="lb-label">Followers</span>
+                        38.5K
+                    </div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="lb-rank">#3</div>
+                    <div class="lb-creator">
+                        <div class="lb-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">⚡</div>
+                        <div class="lb-info">
+                            <div class="lb-name">PixelMaster ✓</div>
+                            <div class="lb-username">@pixelmaster</div>
+                        </div>
+                    </div>
+                    <div class="lb-volume">
+                        <span class="lb-label">Volume</span>
+                        980 ETH
+                    </div>
+                    <div class="lb-sales">
+                        <span class="lb-label">Sales</span>
+                        1,923
+                    </div>
+                    <div class="lb-followers">
+                        <span class="lb-label">Followers</span>
+                        32.1K
+                    </div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="lb-rank">#4</div>
+                    <div class="lb-creator">
+                        <div class="lb-avatar" style="background: linear-gradient(135deg, #fa709a, #fee140);">🌟</div>
+                        <div class="lb-info">
+                            <div class="lb-name">AbstractVision</div>
+                            <div class="lb-username">@abstractvision</div>
+                        </div>
+                    </div>
+                    <div class="lb-volume">
+                        <span class="lb-label">Volume</span>
+                        875 ETH
+                    </div>
+                    <div class="lb-sales">
+                        <span class="lb-label">Sales</span>
+                        1,654
+                    </div>
+                    <div class="lb-followers">
+                        <span class="lb-label">Followers</span>
+                        28.3K
+                    </div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="lb-rank">#5</div>
+                    <div class="lb-creator">
+                        <div class="lb-avatar" style="background: linear-gradient(135deg, #a8edea, #fed6e3);">🎭</div>
+                        <div class="lb-info">
+                            <div class="lb-name">DigitalMuse</div>
+                            <div class="lb-username">@digitalmuse</div>
+                        </div>
+                    </div>
+                    <div class="lb-volume">
+                        <span class="lb-label">Volume</span>
+                        720 ETH
+                    </div>
+                    <div class="lb-sales">
+                        <span class="lb-label">Sales</span>
+                        1,432
+                    </div>
+                    <div class="lb-followers">
+                        <span class="lb-label">Followers</span>
+                        25.7K
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- All Creators Grid -->
+        <h2 style="font-size: 2rem; color: var(--neon-blue); margin-bottom: 2rem; text-align: center;">Featured Creators</h2>
+        
+        <div class="creators-grid">
+            <div class="creator-card">
+                <div class="creator-card-inner">
+                    <div class="rank-badge">#1</div>
+                    <div style="position: relative; width: 120px; margin: 0 auto 1.5rem;">
+                        <div class="creator-avatar">🎨</div>
+                        <div class="verified-badge">✓</div>
+                    </div>
+                    <h3 class="creator-name">CyberArtist</h3>
+                    <p class="creator-username">@cyberartist</p>
+                    <p class="creator-bio">Digital artist specializing in cyberpunk aesthetics and futuristic designs</p>
+                    <div class="creator-stats">
+                        <div class="stat">
+                            <span class="stat-value">248</span>
+                            <span class="stat-label">Items</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">45.2K</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">1.2K ETH</span>
+                            <span class="stat-label">Volume</span>
+                        </div>
+                    </div>
+                    <button class="follow-btn" onclick="toggleFollow(this)">Follow</button>
+                </div>
+            </div>
+
+            <div class="creator-card">
+                <div class="creator-card-inner">
+                    <div class="rank-badge">#2</div>
+                    <div style="position: relative; width: 120px; margin: 0 auto 1.5rem;">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));">🌟</div>
+                        <div class="verified-badge">✓</div>
+                    </div>
+                    <h3 class="creator-name">NeonDreamer</h3>
+                    <p class="creator-username">@neondreamer</p>
+                    <p class="creator-bio">3D artist creating immersive neon-lit worlds and dreamscapes</p>
+                    <div class="creator-stats">
+                        <div class="stat">
+                            <span class="stat-value">187</span>
+                            <span class="stat-label">Items</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">38.5K</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">980 ETH</span>
+                            <span class="stat-label">Volume</span>
+                        </div>
+                    </div>
+                    <button class="follow-btn" onclick="toggleFollow(this)">Follow</button>
+                </div>
+            </div>
+
+            <div class="creator-card">
+                <div class="creator-card-inner">
+                    <div class="rank-badge">#3</div>
+                    <div style="position: relative; width: 120px; margin: 0 auto 1.5rem;">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, var(--neon-green), var(--neon-yellow));">⚡</div>
+                        <div class="verified-badge">✓</div>
+                    </div>
+                    <h3 class="creator-name">PixelMaster</h3>
+                    <p class="creator-username">@pixelmaster</p>
+                    <p class="creator-bio">Retro-futuristic pixel art with a modern twist</p>
+                    <div class="creator-stats">
+                        <div class="stat">
+                            <span class="stat-value">312</span>
+                            <span class="stat-label">Items</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">32.1K</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">875 ETH</span>
+                            <span class="stat-label">Volume</span>
+                        </div>
+                    </div>
+                    <button class="follow-btn" onclick="toggleFollow(this)">Follow</button>
+                </div>
+            </div>
+
+            <div class="creator-card">
+                <div class="creator-card-inner">
+                    <div style="position: relative; width: 120px; margin: 0 auto 1.5rem;">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));">🎭</div>
+                    </div>
+                    <h3 class="creator-name">AbstractVision</h3>
+                    <p class="creator-username">@abstractvision</p>
+                    <p class="creator-bio">Abstract expressionist exploring the boundaries of digital art</p>
+                    <div class="creator-stats">
+                        <div class="stat">
+                            <span class="stat-value">156</span>
+                            <span class="stat-label">Items</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">28.3K</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">720 ETH</span>
+                            <span class="stat-label">Volume</span>
+                        </div>
+                    </div>
+                    <button class="follow-btn" onclick="toggleFollow(this)">Follow</button>
+                </div>
+            </div>
+
+            <div class="creator-card">
+                <div class="creator-card-inner">
+                    <div style="position: relative; width: 120px; margin: 0 auto 1.5rem;">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, #fa709a, #fee140);">🌊</div>
+                    </div>
+                    <h3 class="creator-name">WaveDesign</h3>
+                    <p class="creator-username">@wavedesign</p>
+                    <p class="creator-bio">Fluid art and motion graphics inspired by ocean waves</p>
+                    <div class="creator-stats">
+                        <div class="stat">
+                            <span class="stat-value">203</span>
+                            <span class="stat-label">Items</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">22.7K</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">650 ETH</span>
+                            <span class="stat-label">Volume</span>
+                        </div>
+                    </div>
+                    <button class="follow-btn" onclick="toggleFollow(this)">Follow</button>
+                </div>
+            </div>
+
+            <div class="creator-card">
+                <div class="creator-card-inner">
+                    <div style="position: relative; width: 120px; margin: 0 auto 1.5rem;">
+                        <div class="creator-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">🚀</div>
+                    </div>
+                    <h3 class="creator-name">CosmicArts</h3>
+                    <p class="creator-username">@cosmicarts</p>
+                    <p class="creator-bio">Space-themed illustrations and cosmic landscapes</p>
+                    <div class="creator-stats">
+                        <div class="stat">
+                            <span class="stat-value">178</span>
+                            <span class="stat-label">Items</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">19.5K</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">580 ETH</span>
+                            <span class="stat-label">Volume</span>
+                        </div>
+                    </div>
+                    <button class="follow-btn" onclick="toggleFollow(this)">Follow</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleFollow(button) {
+            if (button.classList.contains('following')) {
+                button.classList.remove('following');
+                button.textContent = 'Follow';
+            } else {
+                button.classList.add('following');
+                button.textContent = 'Following ✓';
+            }
+        }
+
+        // Filter tabs
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                filterTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const creatorCards = document.querySelectorAll('.creator-card');
+            
+            creatorCards.forEach(card => {
+                const name = card.querySelector('.creator-name').textContent.toLowerCase();
+                const username = card.querySelector('.creator-username').textContent.toLowerCase();
+                
+                if (name.includes(searchTerm) || username.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
