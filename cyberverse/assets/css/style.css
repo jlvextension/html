@@ -673,7 +673,7 @@
             box-shadow: 0 10px 40px rgba(0, 255, 136, 0.2);
         }
 
-        .stat-card h3 {
+        .stat-card h2 {
             font-size: 3rem;
             color: var(--neon-green);
             margin-bottom: 0.5rem;
