@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyber Punk Collection - Explore 10,000 unique cyberpunk-themed NFTs. Total volume: 1,250 ETH. Floor price: 1.8 ETH.">
+    <meta name="keywords" content="NFT collection, Cyber Punk NFTs, digital art collection, NFT gallery, blockchain collectibles">
+    <title>Cyber Punk Collection - NFT Gallery | CyberVerse</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-pink: #ff0080;
+            --neon-blue: #00f0ff;
+            --neon-purple: #b000ff;
+            --neon-green: #00ff88;
+            --neon-yellow: #ffff00;
+            --dark-bg: #0a0a0f;
+            --dark-card: #1a1a2e;
+            --glass-bg: rgba(26, 26, 46, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark-bg);
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .cyber-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(255, 0, 128, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(0, 240, 255, 0.15) 0%, transparent 50%);
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: var(--neon-blue);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            min-width: 200px;
+            box-shadow: 0 8px 32px rgba(0, 240, 255, 0.2);
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+
+        .dropdown::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 0.5rem;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        .connect-wallet-btn {
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--neon-blue);
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .collection-banner {
+            height: 400px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .banner-content {
+            font-size: 8rem;
+            text-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+        }
+
+        .banner-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(10, 10, 15, 0.95), transparent);
+            padding: 3rem 0 2rem;
+        }
+
+        .main-container {
+            max-width: 1400px;
+            margin: -100px auto 0;
+            padding: 0 2rem 80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .collection-header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .collection-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            border: 3px solid var(--neon-blue);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+            flex-shrink: 0;
+        }
+
+        .collection-info {
+            flex: 1;
+        }
+
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .collection-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .creator-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .creator-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .creator-name {
+            color: var(--neon-blue);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .creator-name:hover {
+            color: var(--neon-pink);
+        }
+
+        .collection-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .collection-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-favorite {
+            background: transparent;
+            border: 2px solid var(--neon-pink);
+            color: var(--neon-pink);
+        }
+
+        .btn-favorite:hover {
+            background: rgba(255, 0, 128, 0.1);
+        }
+
+        .btn-share {
+            background: transparent;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+        }
+
+        .btn-share:hover {
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        .btn-report {
+            background: transparent;
+            border: 2px solid var(--glass-border);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .btn-report:hover {
+            border-color: var(--neon-yellow);
+            color: var(--neon-yellow);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--neon-green);
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+
+        .controls-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .search-filter {
+            display: flex;
+            gap: 1rem;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 0.8rem 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .filter-select {
+            padding: 0.8rem 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            color: white;
+            font-size: 0.95rem;
+            cursor: pointer;
+            min-width: 150px;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+        }
+
+        .filter-select option {
+            background: var(--dark-card);
+        }
+
+        .view-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .view-btn {
+            width: 40px;
+            height: 40px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .view-btn:hover,
+        .view-btn.active {
+            background: var(--neon-blue);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+        }
+
+        .results-info {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .results-count {
+            color: var(--neon-green);
+            font-weight: 600;
+        }
+
+        .nft-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .nft-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .nft-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-pink);
+            box-shadow: 0 15px 50px rgba(255, 0, 128, 0.4);
+        }
+
+        .nft-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .rank-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.4rem 0.8rem;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--neon-yellow);
+        }
+
+        .nft-info {
+            padding: 1.5rem;
+        }
+
+        .nft-name {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
+        }
+
+        .nft-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .nft-price-info {
+            flex: 1;
+        }
+
+        .price-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .price-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--neon-green);
+        }
+
+        .quick-buy-btn {
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .quick-buy-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 0, 128, 0.5);
+        }
+
+        .load-more {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .load-more-btn {
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .load-more-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 30px rgba(0, 240, 255, 0.5);
+        }
+
+        @media (max-width: 968px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .collection-banner {
+                height: 250px;
+            }
+
+            .banner-content {
+                font-size: 4rem;
+            }
+
+            .collection-title {
+                font-size: 2rem;
+            }
+
+            .header-top {
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .controls-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-filter {
+                min-width: 100%;
+                flex-direction: column;
+            }
+
+            .nft-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-bg"></div>
+    <div class="grid-overlay"></div>
+
+    <header>
+        <nav>
+            <a href="nft-platform-cyberpunk.html" class="logo">⚡ CyberVerse</a>
+            
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="explore.html">Explore ▾</a>
+                    <div class="dropdown-content">
+                        <a href="explore.html">All NFTs</a>
+                        <a href="#trending">Trending</a>
+                        <a href="#art">Digital Art</a>
+                        <a href="#collectibles">Collectibles</a>
+                        <a href="#music">Music</a>
+                        <a href="#gaming">Gaming</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="marketplace.html">Marketplace ▾</a>
+                    <div class="dropdown-content">
+                        <a href="marketplace.html">Buy NFTs</a>
+                        <a href="#sell">Sell NFTs</a>
+                        <a href="#auctions">Live Auctions</a>
+                        <a href="#drops">Upcoming Drops</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="create.html">Create ▾</a>
+                    <div class="dropdown-content">
+                        <a href="create.html">Mint NFT</a>
+                        <a href="#collection">Create Collection</a>
+                        <a href="#tools">Creator Tools</a>
+                    </div>
+                </li>
+                <li><a href="creators.html">Creators</a></li>
+                <li class="dropdown">
+                    <a href="#resources">Resources ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#learn">Learn Web3</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="docs.html">Documentation</a>
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="careers.html">Careers</a>
+                        <a href="help.html">Help Center</a>
+                    </div>
+                </li>
+                <li><button class="connect-wallet-btn">Connect Wallet</button></li>
+            </ul>
+
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Collection Banner -->
+    <div class="collection-banner">
+        <div class="banner-content">🎨</div>
+        <div class="banner-overlay"></div>
+    </div>
+
+    <div class="main-container">
+        <!-- Collection Header -->
+        <div class="collection-header">
+            <div class="header-top">
+                <div class="collection-avatar">🎨</div>
+                
+                <div class="collection-info">
+                    <div class="verified-badge">
+                        <span>✓</span>
+                        <span>Verified Collection</span>
+                    </div>
+                    
+                    <h1 class="collection-title">Cyber Punk Collection</h1>
+                    
+                    <div class="creator-info">
+                        <span class="creator-label">Created by</span>
+                        <a href="#" class="creator-name">CyberStudio</a>
+                    </div>
+                    
+                    <p class="collection-description">
+                        A unique collection of 10,000 cyberpunk-themed NFTs featuring stunning neon aesthetics and futuristic designs. Each NFT is algorithmically generated with over 200 possible traits, ensuring complete uniqueness. Join the cyber revolution and own a piece of the digital future.
+                    </p>
+                    
+                    <div class="collection-actions">
+                        <button class="action-btn btn-favorite">
+                            <span>❤️</span>
+                            <span>Favorite</span>
+                        </button>
+                        <button class="action-btn btn-share">
+                            <span>🔗</span>
+                            <span>Share</span>
+                        </button>
+                        <button class="action-btn btn-report">
+                            <span>⚠️</span>
+                            <span>Report</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">10,000</div>
+                    <div class="stat-label">Total Items</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">5,234</div>
+                    <div class="stat-label">Owners</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">1.8 ETH</div>
+                    <div class="stat-label">Floor Price</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">1,250 ETH</div>
+                    <div class="stat-label">Total Volume</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">52%</div>
+                    <div class="stat-label">Unique Holders</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls Section -->
+        <div class="controls-section">
+            <div class="search-filter">
+                <input type="text" class="search-input" placeholder="Search by name or trait..." id="searchInput">
+                <select class="filter-select" id="sortSelect">
+                    <option value="recent">Recently Listed</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rarity">Rarity: Rare First</option>
+                    <option value="rank">Rank</option>
+                </select>
+            </div>
+
+            <div class="view-controls">
+                <button class="view-btn active" title="Grid View">🔲</button>
+                <button class="view-btn" title="List View">📋</button>
+            </div>
+        </div>
+
+        <div class="results-info">
+            Showing <span class="results-count">12</span> of <span class="results-count">10,000</span> items
+        </div>
+
+        <!-- NFT Grid -->
+        <div class="nft-grid" id="nftGrid">
+            <!-- NFTs will be generated by JavaScript -->
+        </div>
+
+        <!-- Load More -->
+        <div class="load-more">
+            <button class="load-more-btn" onclick="loadMore()">Load More NFTs</button>
+        </div>
+    </div>
+
+    <script>
+        // NFT data
+        const nfts = [
+            { id: 4521, emoji: '🎨', rank: '#12', price: '2.5', gradient: 'linear-gradient(135deg, #667eea, #764ba2)' },
+            { id: 4522, emoji: '🎭', rank: '#45', price: '2.8', gradient: 'linear-gradient(135deg, #f093fb, #f5576c)' },
+            { id: 4523, emoji: '🌊', rank: '#78', price: '2.3', gradient: 'linear-gradient(135deg, #4facfe, #00f2fe)' },
+            { id: 4524, emoji: '🚀', rank: '#23', price: '3.1', gradient: 'linear-gradient(135deg, #fa709a, #fee140)' },
+            { id: 4525, emoji: '🔮', rank: '#156', price: '2.6', gradient: 'linear-gradient(135deg, #a8edea, #fed6e3)' },
+            { id: 4526, emoji: '💎', rank: '#8', price: '5.2', gradient: 'linear-gradient(135deg, #ff6b6b, #ee5a6f)' },
+            { id: 4527, emoji: '⚡', rank: '#34', price: '2.9', gradient: 'linear-gradient(135deg, #ffecd2, #fcb69f)' },
+            { id: 4528, emoji: '🌟', rank: '#67', price: '2.4', gradient: 'linear-gradient(135deg, #ff9a9e, #fecfef)' },
+            { id: 4529, emoji: '🎸', rank: '#90', price: '2.1', gradient: 'linear-gradient(135deg, #a1c4fd, #c2e9fb)' },
+            { id: 4530, emoji: '🏆', rank: '#5', price: '6.5', gradient: 'linear-gradient(135deg, #fbc2eb, #a6c1ee)' },
+            { id: 4531, emoji: '🎮', rank: '#123', price: '2.2', gradient: 'linear-gradient(135deg, #fdcbf1, #e6dee9)' },
+            { id: 4532, emoji: '🦄', rank: '#56', price: '4.1', gradient: 'linear-gradient(135deg, #89f7fe, #66a6ff)' },
+        ];
+
+        // Render NFTs
+        function renderNFTs() {
+            const grid = document.getElementById('nftGrid');
+            grid.innerHTML = '';
+
+            nfts.forEach(nft => {
+                const card = document.createElement('div');
+                card.className = 'nft-card';
+                card.onclick = () => window.location.href = 'nft-detail.html';
+                card.innerHTML = `
+                    <div class="nft-image" style="background: ${nft.gradient}">
+                        ${nft.emoji}
+                        <div class="rank-badge">${nft.rank}</div>
+                    </div>
+                    <div class="nft-info">
+                        <div class="nft-name">Cyber Punk #${nft.id}</div>
+                        <div class="nft-price-row">
+                            <div class="nft-price-info">
+                                <div class="price-label">Price</div>
+                                <div class="price-value">${nft.price} ETH</div>
+                            </div>
+                            <button class="quick-buy-btn" onclick="event.stopPropagation(); quickBuy(${nft.id})">Buy</button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Quick buy
+        function quickBuy(id) {
+            alert(`Quick purchase for Cyber Punk #${id}\n\nPlease confirm in your wallet.`);
+        }
+
+        // Load more
+        function loadMore() {
+            const button = event.target;
+            button.textContent = 'Loading...';
+            
+            setTimeout(() => {
+                renderNFTs();
+                button.textContent = 'Load More NFTs';
+                document.querySelectorAll('.results-count')[0].textContent = parseInt(document.querySelectorAll('.results-count')[0].textContent) + 12;
+            }, 1000);
+        }
+
+        // View toggle
+        const viewBtns = document.querySelectorAll('.view-btn');
+        viewBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                viewBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Favorite toggle
+        document.querySelector('.btn-favorite').addEventListener('click', function() {
+            if (this.style.background) {
+                this.style.background = '';
+                this.style.borderColor = '';
+            } else {
+                this.style.background = 'rgba(255, 0, 128, 0.2)';
+                this.style.borderColor = 'var(--neon-pink)';
+            }
+        });
+
+        // Initial render
+        renderNFTs();
+    </script>
+</body>
+</html>
