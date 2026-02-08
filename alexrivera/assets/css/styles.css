@@ -2079,3 +2079,519 @@ footer {
         justify-content: flex-start;
     }
 }
+
+
+/* ==============================================
+   ABOUT PAGE ONLY — Additional Styles (English)
+   These styles are intended for the About page.
+   They extend the shared/global stylesheet.
+   ============================================== */
+
+/* ----------------------------------------------
+   Animated About Page Header
+   ---------------------------------------------- */
+.page-header-animated {
+    padding: 10rem 0 6rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-secondary) 0%, white 100%);
+    margin-top: 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header-animated::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.header-label {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-header-animated h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+}
+
+.highlight-text {
+    color: var(--color-accent);
+    position: relative;
+}
+
+.highlight-text::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 107, 53, 0.2);
+    z-index: -1;
+}
+
+.header-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.header-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-icon {
+    font-size: 2rem;
+}
+
+.stat-text {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* ----------------------------------------------
+   Simple Reveal Animations (About page helpers)
+   ---------------------------------------------- */
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----------------------------------------------
+   Journey Timeline (About)
+   ---------------------------------------------- */
+.journey-section {
+    background: white;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--color-accent), var(--color-accent-light));
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-item.left {
+    justify-content: flex-end;
+    padding-right: calc(50% + 3rem);
+}
+
+.timeline-item.right {
+    justify-content: flex-start;
+    padding-left: calc(50% + 3rem);
+}
+
+.timeline-badge {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background: white;
+    border: 4px solid var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    box-shadow: var(--shadow-lg);
+    z-index: 2;
+}
+
+.timeline-content {
+    background: var(--color-secondary);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    max-width: 400px;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* ----------------------------------------------
+   Awards (About)
+   ---------------------------------------------- */
+.awards-section {
+    background: var(--color-secondary);
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.award-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.award-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+}
+
+.award-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.award-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.award-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.award-count {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.award-desc {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* ----------------------------------------------
+   Tools & Technologies (About)
+   ---------------------------------------------- */
+.tools-section {
+    background: white;
+}
+
+.tools-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.tool-category {
+    background: var(--color-secondary);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.tool-category h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+}
+
+.tool-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tool-tag {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.tool-tag:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+/* ----------------------------------------------
+   Fun Facts (About)
+   ---------------------------------------------- */
+.fun-facts-section {
+    background: var(--color-secondary);
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.fact-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.fact-emoji {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.fact-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+}
+
+.fact-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* ----------------------------------------------
+   Work Philosophy (About)
+   ---------------------------------------------- */
+.philosophy-section {
+    background: white;
+}
+
+.philosophy-content {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.philosophy-principles {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.principle-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.principle-number {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    opacity: 0.3;
+    flex-shrink: 0;
+}
+
+.principle-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.principle-content p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.philosophy-visual {
+    position: sticky;
+    top: 100px;
+}
+
+.philosophy-quote {
+    background: var(--color-secondary);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.quote-mark {
+    font-size: 6rem;
+    font-family: var(--font-display);
+    color: var(--color-accent);
+    opacity: 0.2;
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+}
+
+.philosophy-quote p {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--color-primary);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1rem;
+}
+
+.philosophy-quote cite {
+    font-size: 1rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.philosophy-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.phil-stat {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.phil-number {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.phil-label {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+
+/* ----------------------------------------------
+   About Page Responsive Adjustments
+   ---------------------------------------------- */
+@media (max-width: 968px) {
+    /* Timeline becomes a left-aligned single column */
+    .timeline::before {
+        left: 40px;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        padding-left: 100px;
+        padding-right: 0;
+        justify-content: flex-start;
+    }
+
+    .timeline-badge {
+        left: 40px;
+        width: 60px;
+        height: 60px;
+        font-size: 1rem;
+    }
+
+    .timeline-content {
+        max-width: 100%;
+    }
+
+    /* Philosophy stacks and sticky is disabled */
+    .philosophy-content {
+        grid-template-columns: 1fr;
+    }
+
+    .philosophy-visual {
+        position: static;
+        order: -1;
+    }
+
+    /* Header stats stacks */
+    .header-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
