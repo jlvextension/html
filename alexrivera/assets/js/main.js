@@ -328,3 +328,50 @@ navLinks.forEach(link => {
 // Console welcome message
 console.log('%c👋 Welcome to Alex Rivera\'s Portfolio!', 'font-size: 20px; font-weight: bold; color: #FF6B35;');
 console.log('%cInterested in working together? Get in touch!', 'font-size: 14px; color: #6B7280;');
+
+// ============================================
+// CONTACT PAGE ONLY — Additional JavaScript (English)
+// This code is intended ONLY for the Contact page.
+// It extends the shared/global script.
+// ============================================
+
+// FAQ Accordion
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach((question) => {
+  question.addEventListener('click', () => {
+    const faqItem = question.parentElement;
+    const isActive = faqItem.classList.contains('active');
+
+    // Close all FAQ items
+    document.querySelectorAll('.faq-item').forEach((item) => {
+      item.classList.remove('active');
+    });
+
+    // Open clicked item if it wasn't active
+    if (!isActive) {
+      faqItem.classList.add('active');
+    }
+  });
+});
+
+// Local Time Display
+function updateLocalTime() {
+  const timeElement = document.getElementById('localTime');
+  if (!timeElement) return;
+
+  const now = new Date();
+  const options = {
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZone: 'America/Los_Angeles',
+    hour12: true,
+  };
+
+  timeElement.textContent = now.toLocaleTimeString('en-US', options);
+}
+
+// Update time immediately and then every minute
+updateLocalTime();
+setInterval(updateLocalTime, 60000);
+
