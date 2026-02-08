@@ -2595,3 +2595,466 @@ footer {
         gap: 1.5rem;
     }
 }
+
+
+/* ==============================================
+   CONTACT PAGE ONLY — Additional Styles (English)
+   These styles are intended ONLY for the Contact page.
+   They extend the shared/global stylesheet.
+   ============================================== */
+
+/* ----------------------------------------------
+   Quick Contact Cards
+   ---------------------------------------------- */
+.quick-contact-section {
+    background: white;
+    padding: 4rem 0;
+}
+
+.quick-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.quick-contact-card {
+    background: var(--color-secondary);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    display: block;
+    text-decoration: none;
+}
+
+.quick-contact-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.qc-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.quick-contact-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.quick-contact-card p {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+}
+
+.qc-action {
+    color: var(--color-accent);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.quick-contact-card:hover .qc-action {
+    gap: 1rem;
+}
+
+/* ----------------------------------------------
+   Response Badge (optional UI element)
+   ---------------------------------------------- */
+.response-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: var(--shadow-md);
+    margin-top: 2rem;
+}
+
+.badge-icon {
+    font-size: 1.5rem;
+}
+
+.badge-text {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* ----------------------------------------------
+   Availability Banner
+   ---------------------------------------------- */
+.availability-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.availability-indicator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+.status-text {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.next-available {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+}
+
+.next-label {
+    opacity: 0.9;
+}
+
+.next-date {
+    font-weight: 700;
+}
+
+/* ----------------------------------------------
+   Location + Map Placeholder
+   ---------------------------------------------- */
+.location-section {
+    background: white;
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.location-info h2 {
+    margin-bottom: 2rem;
+}
+
+.location-card {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--color-secondary);
+    border-radius: 15px;
+}
+
+.loc-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.loc-details h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.loc-details p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    line-height: 1.8;
+}
+
+.location-visual {
+    position: sticky;
+    top: 100px;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.map-pin {
+    font-size: 4rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.map-location {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0;
+}
+
+/* Small button variant (used in Contact page UI blocks) */
+.btn-sm {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Timezone card */
+.timezone-info {
+    background: var(--color-secondary);
+    padding: 1.5rem;
+    border-radius: 15px;
+    display: grid;
+    gap: 1rem;
+}
+
+.tz-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tz-label {
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.tz-time,
+.tz-zone {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+}
+
+/* ----------------------------------------------
+   Why Work With Me (Expectations)
+   ---------------------------------------------- */
+.why-work-section {
+    background: var(--color-secondary);
+}
+
+.expectations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.expectation-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.expectation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.exp-number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    opacity: 0.2;
+    margin-bottom: 1rem;
+}
+
+.expectation-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.expectation-card p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* ----------------------------------------------
+   FAQ Accordion (Contact page variant)
+   NOTE: This differs from the simple FAQ grid style.
+   ---------------------------------------------- */
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Reuses .faq-item name, but becomes an accordion container */
+.faq-item {
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    background: var(--color-secondary);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-accent);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 2rem;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 0 2rem 1.5rem;
+}
+
+.faq-answer p {
+    margin-bottom: 0;
+    color: var(--color-text-light);
+}
+
+/* ----------------------------------------------
+   Alternative Contact (Social Platforms)
+   ---------------------------------------------- */
+.alternative-contact-section {
+    background: white;
+}
+
+.social-platforms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.social-platform-card {
+    background: var(--color-secondary);
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    display: block;
+}
+
+.social-platform-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.platform-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.social-platform-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.social-platform-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+}
+
+.platform-link {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ----------------------------------------------
+   Contact Page Responsive Adjustments
+   ---------------------------------------------- */
+@media (max-width: 968px) {
+    .quick-contact-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .location-content {
+        grid-template-columns: 1fr;
+    }
+
+    .location-visual {
+        position: static;
+    }
+
+    .availability-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
