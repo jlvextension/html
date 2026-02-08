@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Award-winning freelance web designer specializing in modern, user-centric digital experiences. Transform your brand with stunning web design.">
+    <meta name="keywords" content="web design, freelance designer, UI/UX design, responsive websites, brand identity, digital design">
+    <meta name="author" content="Alex Rivera - Freelance Web Designer">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Alex Rivera - Freelance Web Designer">
+    <meta property="og:description" content="Award-winning freelance web designer creating stunning digital experiences">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alexrivera.design">
+    <meta property="og:image" content="https://alexrivera.design/og-image.jpg">
+    
+    <title>Alex Rivera - Freelance Web Designer | Home</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>✦</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">✦</div>
+                    <span>Alex Rivera</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="services.html" class="dropdown-toggle">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html#web-design">Web Design</a></li>
+                            <li><a href="services.html#ui-ux">UI/UX Design</a></li>
+                            <li><a href="services.html#branding">Branding</a></li>
+                            <li><a href="services.html#development">Development</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="btn-nav">Get Started</a></li>
+                </ul>
+                
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas-overlay" id="offcanvasOverlay"></div>
+    <div class="offcanvas" id="offcanvas">
+        <div class="offcanvas-header">
+            <div class="logo">
+                <div class="logo-icon">✦</div>
+                <span>Alex Rivera</span>
+            </div>
+            <button class="offcanvas-close" id="offcanvasClose">✕</button>
+        </div>
+        <ul class="offcanvas-menu">
+            <li><a href="index.html" class="offcanvas-link">Home</a></li>
+            <li><a href="about.html" class="offcanvas-link">About</a></li>
+            <li><a href="services.html" class="offcanvas-link">Services</a></li>
+            <li><a href="portfolio.html" class="offcanvas-link">Portfolio</a></li>
+            <li><a href="testimonials.html" class="offcanvas-link">Testimonials</a></li>
+            <li><a href="contact.html" class="offcanvas-link">Contact</a></li>
+        </ul>
+    </div>
+    
+    <!-- Hero Slider Section -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="hero-slide active">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <span class="hero-label">🏆 Award-Winning Designer</span>
+                            <h1 class="slide-in-left">Creating <span class="highlight">Digital Experiences</span> That Matter</h1>
+                            <p class="slide-in-left delay-1">Freelance web designer specializing in crafting beautiful, user-centric websites that drive results. Let's bring your vision to life.</p>
+                            <div class="hero-buttons slide-in-left delay-2">
+                                <a href="contact.html" class="btn btn-primary">Start Your Project →</a>
+                                <a href="portfolio.html" class="btn btn-secondary">View My Work</a>
+                            </div>
+                        </div>
+                        <div class="hero-image slide-in-right">
+                            <div class="hero-image-wrapper">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%23667eea' width='600' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='48' fill='white' text-anchor='middle' dy='.3em'%3EWeb Design%3C/text%3E%3C/svg%3E" alt="Modern web design showcase">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <span class="hero-label">💡 User-Centric Design</span>
+                            <h1 class="slide-in-left">Transform Your <span class="highlight">Brand Identity</span></h1>
+                            <p class="slide-in-left delay-1">From concept to launch, I create cohesive brand experiences that resonate with your audience and drive business growth.</p>
+                            <div class="hero-buttons slide-in-left delay-2">
+                                <a href="services.html" class="btn btn-primary">Explore Services →</a>
+                                <a href="about.html" class="btn btn-secondary">About Me</a>
+                            </div>
+                        </div>
+                        <div class="hero-image slide-in-right">
+                            <div class="hero-image-wrapper">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%23764ba2' width='600' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='48' fill='white' text-anchor='middle' dy='.3em'%3EBranding%3C/text%3E%3C/svg%3E" alt="Brand identity design">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <span class="hero-label">🚀 Results-Driven</span>
+                            <h1 class="slide-in-left">Websites That <span class="highlight">Convert & Perform</span></h1>
+                            <p class="slide-in-left delay-1">Fast, responsive, and optimized for success. I build websites that not only look amazing but deliver real business results.</p>
+                            <div class="hero-buttons slide-in-left delay-2">
+                                <a href="portfolio.html" class="btn btn-primary">View Portfolio →</a>
+                                <a href="contact.html" class="btn btn-secondary">Get A Quote</a>
+                            </div>
+                        </div>
+                        <div class="hero-image slide-in-right">
+                            <div class="hero-image-wrapper">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%23f093fb' width='600' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='48' fill='white' text-anchor='middle' dy='.3em'%3EDevelopment%3C/text%3E%3C/svg%3E" alt="Web development">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+            <button class="slider-btn prev-btn" aria-label="Previous slide">‹</button>
+            <button class="slider-btn next-btn" aria-label="Next slide">›</button>
+        </div>
+        
+        <!-- Slider Dots -->
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="150">0</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="98">0</span>
+                    <span class="stat-label">Client Satisfaction</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="8">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="45">0</span>
+                    <span class="stat-label">Awards Won</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Brands/Clients Section -->
+    <section class="brands-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Trusted By</span>
+                <h2>Brands I've Worked With</h2>
+            </div>
+            <div class="brands-marquee">
+                <div class="brands-track">
+                    <div class="brand-item">TechFlow</div>
+                    <div class="brand-item">Fashion Forward</div>
+                    <div class="brand-item">Gourmet Bistro</div>
+                    <div class="brand-item">DataMetrics Pro</div>
+                    <div class="brand-item">EcoLife</div>
+                    <div class="brand-item">FitLife App</div>
+                    <div class="brand-item">LuxeHomes</div>
+                    <div class="brand-item">CloudSync</div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="brand-item">TechFlow</div>
+                    <div class="brand-item">Fashion Forward</div>
+                    <div class="brand-item">Gourmet Bistro</div>
+                    <div class="brand-item">DataMetrics Pro</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Why Choose Me Section -->
+    <section class="why-choose-section">
+        <div class="container">
+            <div class="why-choose-content">
+                <div class="why-choose-text">
+                    <span class="section-label">Why Choose Me</span>
+                    <h2>Your Success Is My Priority</h2>
+                    <p>With over 8 years of experience and 150+ successful projects, I bring a unique combination of creative vision and technical expertise to every project.</p>
+                    
+                    <div class="why-features">
+                        <div class="why-feature">
+                            <div class="why-icon">⚡</div>
+                            <div class="why-content">
+                                <h4>Fast Turnaround</h4>
+                                <p>Efficient workflow means your project launches on time, every time.</p>
+                            </div>
+                        </div>
+                        <div class="why-feature">
+                            <div class="why-icon">🎯</div>
+                            <div class="why-content">
+                                <h4>Strategic Approach</h4>
+                                <p>Data-driven decisions that align with your business goals.</p>
+                            </div>
+                        </div>
+                        <div class="why-feature">
+                            <div class="why-icon">💬</div>
+                            <div class="why-content">
+                                <h4>Clear Communication</h4>
+                                <p>Regular updates and transparent collaboration throughout.</p>
+                            </div>
+                        </div>
+                        <div class="why-feature">
+                            <div class="why-icon">✨</div>
+                            <div class="why-content">
+                                <h4>Pixel-Perfect Design</h4>
+                                <p>Meticulous attention to detail in every element.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="about.html" class="btn btn-primary">Learn More About Me →</a>
+                </div>
+                <div class="why-choose-visual">
+                    <div class="visual-grid">
+                        <div class="visual-card card-1">
+                            <div class="card-icon">🎨</div>
+                            <h4>Creative</h4>
+                        </div>
+                        <div class="visual-card card-2">
+                            <div class="card-icon">💻</div>
+                            <h4>Technical</h4>
+                        </div>
+                        <div class="visual-card card-3">
+                            <div class="card-icon">📊</div>
+                            <h4>Strategic</h4>
+                        </div>
+                        <div class="visual-card card-4">
+                            <div class="card-icon">🚀</div>
+                            <h4>Results</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What I Do</span>
+                <h2>Services That Elevate Your Brand</h2>
+                <p>Comprehensive web design solutions tailored to your unique needs</p>
+            </div>
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Web Design</h3>
+                    <p>Custom website designs that capture your brand essence and engage your audience.</p>
+                    <a href="services.html#web-design" class="service-link">Learn More →</a>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Intuitive interfaces and seamless experiences that drive conversions.</p>
+                    <a href="services.html#ui-ux" class="service-link">Learn More →</a>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Brand Identity</h3>
+                    <p>Comprehensive branding solutions that establish a memorable presence.</p>
+                    <a href="services.html#branding" class="service-link">Learn More →</a>
+                </article>
+            </div>
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="services.html" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Work -->
+    <section class="featured-work">
+        <div class="container-wide">
+            <div class="section-header">
+                <span class="section-label">Recent Work</span>
+                <h2>Featured Projects</h2>
+                <p>A selection of my latest work showcasing creativity and results</p>
+            </div>
+            <div class="portfolio-grid">
+                <article class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect fill='%23667eea' width='400' height='400'/%3E%3C/svg%3E" alt="E-commerce platform">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">E-Commerce</span>
+                        <h3>Modern Fashion Store</h3>
+                        <p>Complete redesign with 45% increase in conversions</p>
+                    </div>
+                </article>
+                <article class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect fill='%23764ba2' width='400' height='400'/%3E%3C/svg%3E" alt="SaaS dashboard">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">SaaS Platform</span>
+                        <h3>Analytics Dashboard</h3>
+                        <p>Data visualization platform with intuitive UX</p>
+                    </div>
+                </article>
+                <article class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect fill='%23f093fb' width='400' height='400'/%3E%3C/svg%3E" alt="Restaurant website">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Restaurant</span>
+                        <h3>Fine Dining Experience</h3>
+                        <p>Elegant website with online reservations</p>
+                    </div>
+                </article>
+            </div>
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="portfolio.html" class="btn btn-primary">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="process-home-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">How I Work</span>
+                <h2>Simple & Effective Process</h2>
+                <p>A proven methodology that delivers exceptional results</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-badge">01</div>
+                    <div class="step-icon">🔍</div>
+                    <h3>Discovery</h3>
+                    <p>Understanding your vision, goals, and target audience through in-depth research.</p>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step">
+                    <div class="step-badge">02</div>
+                    <div class="step-icon">✏️</div>
+                    <h3>Design</h3>
+                    <p>Creating wireframes and high-fidelity designs that bring your vision to life.</p>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step">
+                    <div class="step-badge">03</div>
+                    <div class="step-icon">⚙️</div>
+                    <h3>Develop</h3>
+                    <p>Building your website with clean code and modern best practices.</p>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step">
+                    <div class="step-badge">04</div>
+                    <div class="step-icon">🚀</div>
+                    <h3>Launch</h3>
+                    <p>Deploying your project and providing ongoing support for success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Preview -->
+    <section class="testimonials-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Client Love</span>
+                <h2>What Clients Are Saying</h2>
+                <p>Real feedback from real clients who love working with me</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-track">
+                    <article class="testimonial-card">
+                        <div class="rating">★★★★★</div>
+                        <p class="testimonial-text">"Alex transformed our outdated website into a modern masterpiece. Our online sales increased by 60% within the first month!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SM</div>
+                            <div class="author-info">
+                                <h4>Sarah Mitchell</h4>
+                                <p class="author-role">CEO, Fashion Forward</p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="testimonial-card">
+                        <div class="rating">★★★★★</div>
+                        <p class="testimonial-text">"Working with Alex was a dream. Professional, creative, and always delivered on time. The UI/UX design exceeded all our expectations."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JC</div>
+                            <div class="author-info">
+                                <h4>James Chen</h4>
+                                <p class="author-role">Product Manager, TechFlow</p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="testimonial-card">
+                        <div class="rating">★★★★★</div>
+                        <p class="testimonial-text">"Best investment we made for our business. Alex not only designed a beautiful website but also understood our brand vision perfectly."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">ER</div>
+                            <div class="author-info">
+                                <h4>Emily Rodriguez</h4>
+                                <p class="author-role">Owner, Gourmet Bistro</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="testimonials.html" class="btn btn-primary">Read More Reviews</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Latest Insights -->
+    <section class="insights-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Latest Insights</span>
+                <h2>Design Tips & Trends</h2>
+                <p>Stay updated with the latest in web design and development</p>
+            </div>
+            <div class="insights-grid">
+                <article class="insight-card">
+                    <div class="insight-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23667eea' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='white' text-anchor='middle' dy='.3em'%3EDesign Trends%3C/text%3E%3C/svg%3E" alt="Design Trends 2026">
+                    </div>
+                    <div class="insight-content">
+                        <span class="insight-category">Trends</span>
+                        <h3>Top Web Design Trends for 2026</h3>
+                        <p>Discover the latest design trends shaping the digital landscape this year.</p>
+                        <a href="#" class="insight-link">Read More →</a>
+                    </div>
+                </article>
+                
+                <article class="insight-card">
+                    <div class="insight-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23764ba2' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='white' text-anchor='middle' dy='.3em'%3EUX Tips%3C/text%3E%3C/svg%3E" alt="UX Best Practices">
+                    </div>
+                    <div class="insight-content">
+                        <span class="insight-category">UX Design</span>
+                        <h3>5 UX Principles Every Website Needs</h3>
+                        <p>Essential UX principles that improve user experience and conversions.</p>
+                        <a href="#" class="insight-link">Read More →</a>
+                    </div>
+                </article>
+                
+                <article class="insight-card">
+                    <div class="insight-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23f093fb' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='white' text-anchor='middle' dy='.3em'%3EPerformance%3C/text%3E%3C/svg%3E" alt="Website Performance">
+                    </div>
+                    <div class="insight-content">
+                        <span class="insight-category">Development</span>
+                        <h3>Optimizing Website Performance</h3>
+                        <p>Proven techniques to make your website faster and more efficient.</p>
+                        <a href="#" class="insight-link">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section>
+        <div class="container">
+            <div class="cta-section">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Let's collaborate to create something amazing together. Get in touch today and let's discuss how I can help bring your vision to life.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-white">Get a Free Quote</a>
+                    <a href="portfolio.html" class="btn btn-secondary">View Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="logo">
+                        <div class="logo-icon">✦</div>
+                        <span>Alex Rivera</span>
+                    </div>
+                    <p>Award-winning freelance web designer creating stunning digital experiences that drive results.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">💼</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🏀</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#web-design">Web Design</a></li>
+                        <li><a href="services.html#ui-ux">UI/UX Design</a></li>
+                        <li><a href="services.html#branding">Branding</a></li>
+                        <li><a href="services.html#development">Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Alex Rivera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <button class="scroll-top" id="scrollTop">↑</button>
+    
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
